@@ -95,3 +95,10 @@ Redmineオフィシャルサイトで公開されている [Redmine Guide](http:
 ### Alternative/Custom Authentication
 
 -   A howto (Alternative/custom authentication HowTo) for implementing authentication against a different database.
+
+Redmine Guide 日本語訳について
+------------------------------
+
+- この文書は、Redmineの公式サイトで公開されているマニュアル「[Redmine Guide](http://www.redmine.org/projects/redmine/wiki/Guide)」の日本語訳です。
+- クリエイティブ・コモンズ・ライセンス 表示 - 継承 4.0 国際 (CC BY-SA 4.0) に従う限り、自由に共有・翻案できます。
+- 修正の提案等は [GitHub](https://github.com/farend/redmine-guide-ja) でお願いします。
