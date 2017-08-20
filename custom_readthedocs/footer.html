@@ -1,0 +1,28 @@
+<footer>
+  {%- block next_prev %}
+  {% if page and page.next_page or page.previous_page %}
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      {% if page.next_page %}
+        <a href="{{ page.next_page.url }}" class="btn btn-neutral float-right" title="{{ page.next_page.title }}">次 <span class="icon icon-circle-arrow-right"></span></a>
+      {% endif %}
+      {% if page.previous_page %}
+        <a href="{{ page.previous_page.url }}" class="btn btn-neutral" title="{{ page.previous_page.title }}"><span class="icon icon-circle-arrow-left"></span> 前</a>
+      {% endif %}
+    </div>
+  {% endif %}
+  {%- endblock %}
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    {% if config.copyright %}
+      <p>
+        Copyright &copy; {{ build_date_utc.year }} {{ config.copyright }}<br>
+        <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.ja"><img alt="クリエイティブ・コモンズ・ライセンス" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+      </p>
+    {% endif %}
+  </div>
+
+  <small>Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.</small>
+</footer>

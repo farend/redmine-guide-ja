@@ -1,0 +1,28 @@
+body, h1, h2, h3, h4, h5, h6 {
+  font-family: "Meiryo","メイリオ","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro",sans-serif;
+}
+
+p {
+  font-size: 15px;
+  line-height: 165%;
+}
+
+code, .rst-content tt {
+  font-size: 85%;
+  color: #404040;
+}
+
+pre code {
+  font-size: 85%;
+}
+
+.rst-content img {
+    border: 1px solid #ddd;
+}
+
+.wy-plain-list-decimal li, .rst-content .section ol li, .rst-content ol.arabic li, article ol li {
+  margin-bottom: 0.3em;
+}
+.wy-side-nav-search {
+  background-color: #b22323;
+}

@@ -1,0 +1,67 @@
+site_name: Redmine Guide 日本語訳
+theme: readthedocs
+theme_dir: custom_readthedocs
+extra_css: [extra.css]
+extra_javascript: [extra.js]
+copyright: <a href="https://www.farend.co.jp/">ファーエンドテクノロジー株式会社</a>
+
+markdown_extensions:
+  - admonition
+  - attr_list
+
+pages:
+  - Home: index.md
+
+  - 'インストールガイド':
+    - 'Redmineのインストール': RedmineInstall.md
+    - '» メールの設定例': Email_Configuration.md
+    - 'アップグレード': RedmineUpgrade.md
+    - '他システムからの移行': RedmineMigrate.md
+
+  - '管理者向けガイド':
+    - 'プロジェクトの管理': RedmineProjects.md
+    - 'ユーザの管理': RedmineUsers.md
+    - 'グループの管理': RedmineGroups.md
+    - 'ロールと権限': RedmineRoles.md
+    - '課題管理システム': RedmineIssueTrackingSetup.md
+    - 'カスタムフィールド': RedmineCustomFields.md
+    - '列挙項目': RedmineEnumerations.md
+
+    - 'アプリケーションの設定': RedmineSettings.md
+
+  - '管理者向けガイド — 高度な設定':
+    - 'リポジトリ': RedmineRepositories.md
+    - 'メールによるチケット登録': RedmineReceivingEmails.md
+    - 'リマインダメールの送信': RedmineReminderEmails.md
+    - 'LDAP認証': RedmineLDAP.md
+
+  - 'ユーザーガイド':
+    - '始めましょう': Getting_Started.md
+    - 'アカウント': RedmineAccounts.md
+    - 'ログイン': RedmineLogin.md
+    - '登録': RedmineRegister.md
+    - '検索': RedmineSearch.md
+    - '「概要」': RedmineProjectOverview.md
+    - '活動': RedmineProjectActivity.md
+    - 'チケット': RedmineIssues.md
+    - '» チケット一覧': RedmineIssueList.md
+    - '»» チケットのサマリー': RedmineIssueSummary.md
+    - '時間管理': RedmineTimeTracking.md
+    - '» 作業時間の記録: 詳細': RedmineTimelogDetails.md
+    - '» 作業時間の記録: レポート': RedmineTimelogReport.md
+    - 'ガントチャート': RedmineGantt.md
+    - 'カレンダー': RedmineCalendar.md
+    - 'ニュース': RedmineNews.md
+    - '文書': RedmineDocuments.md
+    - 'ファイル': RedmineFiles.md
+    - 'フォーラム': RedmineForums.md
+    - 'Wiki': RedmineWikis.md
+    - 'リポジトリ': RedmineRepository.md
+    - '» リポジトリの統計': RedmineRepositoryStatistics.md
+    - '添付ファイル': RedmineAttachedFiles.md
+
+  - '開発者ガイド — プラグイン':
+    - 'プラグイン チュートリアル': Plugin_Tutorial.md
+
+  - '開発者ガイド — テーマ':
+    - 'Redmineのカスタムテーマの作成': HowTo_create_a_custom_Redmine_theme.md
