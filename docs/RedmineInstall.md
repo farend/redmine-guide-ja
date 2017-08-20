@@ -4,6 +4,12 @@ Redmineのインストール
 !!! note ""
     最終更新: 2015/01/12 [[原文](http://www.redmine.org/projects/redmine/wiki/RedmineInstall/229)]
 
+!!! tip
+    インストール作業やサーバの運用が不要な<strong>クラウドサービス</strong>もあります。
+
+    * **[My Redmine](https://hosting.redmine.jp/)** (ファーエンドテクノロジー株式会社)<br>
+    * **[Planio](https://plan.io/ja/)** (Planio GmbH) <small>※**[無料プラン](https://planio.farend.jp/contents/free/)** あり</small>
+
 必要な環境
 ----------
 
@@ -368,3 +374,9 @@ Windows 7以降では `localhost`
 
 インストール作業を簡略化できるサードパーティのAll-in-Oneインストーラも提供されています。
 [ダウンロード](http://redmine.jp/download/) ページを参照してください。
+
+!!! tip
+    インストール作業やサーバの運用が不要な<strong>クラウドサービス</strong>もあります。
+
+    * **[My Redmine](https://hosting.redmine.jp/)** (ファーエンドテクノロジー株式会社)<br>
+    * **[Planio](https://plan.io/ja/)** (Planio GmbH) <small>※**[無料プラン](https://planio.farend.jp/contents/free/)** あり</small>
