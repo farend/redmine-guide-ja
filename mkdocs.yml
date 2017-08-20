@@ -9,6 +9,9 @@ markdown_extensions:
   - admonition
   - attr_list
 
+# redmine.jp
+google_analytics: ['UA-2756109-27', 'guide.redmine.jp']
+
 pages:
   - Home: index.md
 
