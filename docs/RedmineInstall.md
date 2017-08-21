@@ -4,8 +4,8 @@ Redmineのインストール
 !!! note ""
     最終更新: 2017/08/21 [[原文](http://www.redmine.org/projects/redmine/wiki/RedmineInstall/281)]
 
-必要な環境
-----------
+動作環境 {: #Requirements }
+--------
 
 ### OS
 
@@ -261,7 +261,7 @@ RAILS_ENV=production bundle exec rake redmine:load_default_data
 
 コマンドを実行中、どの言語のデフォルトデータを登録するのか選択を求められます。なお、コマンドラインで `REDMINE_LANG` 環境変数を指定すると、言語の選択を求められることなく自動的に処理が勧められます。
 
-例: 
+例:
 
 UNIX:
 
