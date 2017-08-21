@@ -8,6 +8,7 @@ copyright: <a href="https://www.farend.co.jp/">ファーエンドテクノロジ
 markdown_extensions:
   - admonition
   - attr_list
+  - footnotes
 
 pages:
   - Home: index.md
