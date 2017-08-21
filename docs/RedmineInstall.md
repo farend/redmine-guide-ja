@@ -2,7 +2,7 @@ Redmineのインストール
 =====================
 
 !!! note ""
-    最終更新: 2015/01/12 [[原文](http://www.redmine.org/projects/redmine/wiki/RedmineInstall/229)]
+    最終更新: 2017/08/21 [[原文](http://www.redmine.org/projects/redmine/wiki/RedmineInstall/281)]
 
 !!! tip
     インストール作業やサーバの運用が不要な<strong>クラウドサービス</strong>もあります。
@@ -29,91 +29,114 @@ Server](http://www.redmine.org/projects/redmine/wiki/RedmineInstallOSXServer)
 
 Redmineの各バージョンで必要となるRubyのバージョンは以下の通りです。
 
-|Redmine version | Supported Ruby versions          | Rails version used  |
-|:--------------:|:--------------------------------:|:-------------------:|
-| 3.3            | ruby 1.9.3, 2.0.0, 2.1, 2.2, 2.3 | Rails 4.2           |
-| 3.2            | ruby 1.9.3, 2.0.0, 2.1, 2.2      | Rails 4.2           |
+|Redmineのバージョン | 対応しているRubyのバージョン     | Railsのバージョン  |
+|:---------------:|:---------------------------------|:-------------------:|
+| 4.0 (未リリース)| ruby 1.9.3, 2.0.0, 2.1, 2.2, 2.3, 2.4[^ruby-2_4] | Rails 5.1      |
+| 3.4             | ruby 1.9.3, 2.0.0, 2.1, 2.2, 2.3, 2.4[^ruby-2_4] | Rails 4.2           |
+| 3.3             | ruby 1.9.3, 2.0.0, 2.1, 2.2, 2.3 | Rails 4.2           |
+| 3.2             | ruby 1.9.3, 2.0.0, 2.1, 2.2      | Rails 4.2           |
 
 !!! warning
     Ruby 1.9.3, 2.0 と 2.1のRubyコミュニティによる保守は終了しました。原則として使用しないでください。
 
+[^ruby-2_4]: Ruby 2.4には [r16355](http://www.redmine.org/projects/redmine/repository/revisions/16355) で対応しています。
+
 ### データベース
 
-- MySQL 5.0以上 (推奨)
-    - MySQLのC bindingをインストールしてください。劇的にパフォーマンスが改善します。`gem install mysql2` を実行すればインストールできます。インストール中に問題が発生した場合は [Rails Wiki pages](http://wiki.rubyonrails.org/database-support/mysql) を参照してください。
-    - Redmine2.xはmysql5.7.3と互換性がありません。Redmine 3でサポートされる予定です。
-- PostgreSQL 8.2以上
+- MySQL 5.0 - 5.5
+    - MySQL 5.6以降とMariaDBは既知の問題があります ([#19344](http://www.redmine.org/issues/19344), [#19395](http://www.redmine.org/issues/19395), [#17460](http://www.redmine.org/issues/17460), [#25416](http://www.redmine.org/issues/25416)).
+- PostgreSQL 8.2以降
     - データベースの日付形式がISO(PostgreSQLのデフォルト)であることを確認してください。次のSQL文で設定できます: `ALTER DATABASE "redmine_db" SET datestyle="ISO,MDY";`
-    - PostgreSQL 8.4.0 と 8.4.1に存在するバグがRedmineの動作に影響を及ぼします。([#4259](http://www.redmine.org/issues/4259), [#4259](http://www.redmine.org/issues/4314)) PostgreSQL 8.4.2では修正されています。
-- Microsoft SQL Server 2008以上(要Redmine2.3.0以上)
-- SQLite 3
+    - PostgreSQL 8.4.0 と 8.4.1に存在するバグに起因するRedmineの不具合が報告されています([#4259](http://www.redmine.org/issues/4259), [#4259](http://www.redmine.org/issues/4314))。それらのバグはPostgreSQL 8.4.2で修正済みです。
+- Microsoft SQL Server 2012以降
+- SQLite 3 (複数のユーザーがアクセスする実運用環境には向いていません!)
 
 ### オプション
 
 - バージョン管理システム(svn等)のバイナリ（リポジトリ閲覧用、PATHが通っていなければなりません）。利用可能なバージョン管理システムや動作条件については
     [「リポジトリの設定」](RedmineRepositories) をご覧下さい。
-- RMagick (ガントチャートのPNG形式でのエクスポートで使用)
-- [Ruby OpenID Library](http://openidenabled.com/ruby-openid/)
-    (OpenIDによる認証を使用する場合)
-    \[OpenIDはtrunkと0.9-devのみで利用可能\] バージョン2以降
+- [ImageMagick](http://www.imagemagick.org/script/index.php) (ガントチャートのPNG形式でのエクスポートとサムネイル生成に使用)
+- [Ruby OpenID Library](https://github.com/openid/ruby-openid)
+    (OpenIDによる認証を使用する場合)。
 
 Redmineのバージョン
 -------------------
 
-通常は最新のリリース版のRedmineをインストールしてください。Redmineは現在6ヶ月ごとに新しいバージョンがリリースされており、リリース版はたいへん実用的でかつ安定しています。RubyおよびRailsに精通しているのでなければ、trunkバージョンのRedmineの利用は
-**おすすめできません。**
-trunkバージョンは正常に動作しないこともあります。
+通常は最新のリリース版のRedmineをインストールしてください。Redmineは6ヶ月ごとに新しいバージョンがリリースされており、リリース版はたいへん実用的でかつ安定しています。リポジトリのtrunkからチェックアウトした開発版の利用は、Ruby on Railsに精通し、かつ最新の開発に追従する必要がない限りは **おすすめしません。**
+trunkは正常に動作しないこともあります。
 
 インストール手順
 ----------------
 
-1\. リリースパッケージを [ダウンロード](http://www.redmine.jp/download/)
-し展開するか、svnリポジトリからチェックアウトし、Redmineのソースコードを取得してください。
+### Step 1 - Redmine本体のインストール
 
-2.空のデータベースとそのデータベースに接続するためのユーザー（例:
-`redmine` )を作成してください。
+リリースパッケージを [ダウンロード](http://www.redmine.jp/download/)
+するか、リポジトリからチェックアウトしてRedmineのソースコードを取得してください。
 
-MySQLの場合:
+### Step 2 - 空のデータベースとユーザーの作成
+
+ここではデータベース名とユーザー名を `redmine` としますが、それ以外の名前に変えることもできます。
+
+#### MySQLの場合:
 
 ``` sql
-create database redmine character set utf8;
-create user 'redmine'@'localhost' identified by 'my_password';
-grant all privileges on redmine.* to 'redmine'@'localhost';
+CREATE DATABASE redmine CHARACTER SET utf8;
+CREATE USER 'redmine'@'localhost' IDENTIFIED BY 'my_password';
+GRANT ALL PRIVILEGES ON redmine.* TO 'redmine'@'localhost';
 ```
 
-MySQL 5.0.2より前のバージョンを使用する場合create
-userの手順をスキップし以下で代用します。
+MySQL 5.0.2以前の場合 - `CREATE USER` の代わりに以下を実行してください:
 
-```
+``` sql
 grant all privileges on redmine.* to 'redmine'@'localhost' identified by 'my_password';
 ```
 
-PostgreSQLの場合:
+#### PostgreSQLの場合
 
-```
+``` sql
 CREATE ROLE redmine LOGIN ENCRYPTED PASSWORD 'my_password' NOINHERIT VALID UNTIL 'infinity';
 CREATE DATABASE redmine WITH ENCODING='UTF8' OWNER=redmine;
 ```
 
-3\. `config/database.example.yml` をコピーして `config/database.yml`
-を作成してください。 `config/database.yml`
-を編集し、"production"環境用のデータベース設定を行ってください。
+#### SQL Serverの場合
 
-MySQLをRuby 1.8またはjrubyで使用するの場合の例:
+「SQL Server Management Studio」を使えば数クリックで必要な設定が行えます。
 
+もし SQLCMD によるコマンドラインでの操作のほうがよければ、以下の例を参考にしてください:
+
+``` sql
+USE [master]
+GO
+
+-- Very basic DB creation
+CREATE DATABASE [REDMINE]
+GO
+
+-- Creation of a login with SQL Server login/password authentication and no password expiration policy
+CREATE LOGIN [REDMINE] WITH PASSWORD=N'redminepassword', DEFAULT_DATABASE=[REDMINE], CHECK_EXPIRATION=OFF, CHECK_POLICY=OFF
+GO
+
+-- User creation using previously created login authentication
+USE [REDMINE]
+GO
+CREATE USER [REDMINE] FOR LOGIN [REDMINE]
+GO
+-- User permissions set via roles
+EXEC sp_addrolemember N'db_datareader', N'REDMINE'
+GO
+EXEC sp_addrolemember N'db_datawriter', N'REDMINE'
+GO
 ```
-production:
-  adapter: mysql
-  database: redmine
-  host: localhost
-  username: redmine
-  password: my_password
-```
 
-MySQLをRuby 1.9で使用するの場合の例 (データベースアダプタは `mysql2`
-でなければなりません):
+### Step 3 - データベースに接続するための設定
 
-```
+`config/database.example.yml` をコピーして `config/database.yml`
+を作成してください。そして `config/database.yml`
+を編集し、"production" 環境用のデータベース設定を行ってください。
+
+MySQLの例 (デフォルトのポートを使用):
+
+``` yaml
 production:
   adapter: mysql2
   database: redmine
@@ -124,9 +147,9 @@ production:
 
 MySQLを標準のポート(3306)以外で実行している場合は以下のような設定となります:
 
-```
+``` yaml
 production:
-  adapter: mysql
+  adapter: mysql2
   database: redmine
   host: localhost
   port: 3307
@@ -136,7 +159,7 @@ production:
 
 PostgreSQLを使用する場合の例(デフォルトのポート):
 
-```
+``` yaml
 production:
   adapter: postgresql
   database: <your_database_name>
@@ -144,150 +167,226 @@ production:
   username: <postgres_user>
   password: <postgres_user_password>
   encoding: utf8
-  schema_search_path: <database_schema> (デフォルト: public)
+  schema_search_path: <database_schema> (default - public)
 ```
 
-4\. 1.4.0以降では、Redmineはgemの依存関係を管理するために
-[Bundler](http://gembundler.com/)
-を使っています。まずはBundlerをインストールしてください:
+SQL Serverを使用する場合の例(デフォルトホスト＝localhost、デフォルトポート＝1433):
 
-`gem install bundler`
-
-その後、以下のコマンドを実行することで、Redmineを実行するために必要なすべてのgemをインストールすることができます:
-
-`bundle install --without development test`
-
-もしRedmineをインストールしようとしている環境にImageMagickがインストールされていない場合、次のようにしてrmagickのインストールを省略する必要があります:
-
-`bundle install --without development test rmagick`.
-
-使用しないデータベースアダプタのインストールを省略することもできます。たとえばMySQLを使用する場合、
-`` `bundle install --without development test postgresql sqlite` ``
-とすることでpostgresqlとsqliteのgemのインストールを省略できます。
-
-もしRedmine本体は使用しないgem(例: puma, fcgi)もロードしたい場合、
-`Gemfile.local`
-というファイルをRedmineのディレクトリに作成してください。
-`bundle install` 実行時に読み込まれます。 例:
-
+``` yaml
+production:
+  adapter: sqlserver
+  database: redmine
+  username: redmine # should match the database user name
+  password: redminepassword # should match the login password
 ```
+
+### Step 4 - 依存するソフトウェアのインストール
+
+RedmineはRubyGemの依存関係を管理するために [Bundler](http://gembundler.com/) を使用します。
+
+まずはBundlerをインストールしてください:
+
+``` bash
+gem install bundler
+```
+
+Bundlerのインストール後は、以下のコマンドを実行することでRedmineを実行するために必要なすべてのgemをインストールすることができます:
+
+``` bash
+bundle install --without development test
+```
+
+#### 省略可能な依存関係
+
+##### RMagick
+
+(PDFとPNGのエクスポートのための画像を操作するためにImageMagickをRedmineから利用するためのツール)
+
+もしRedmineをインストールしようとしている環境にImageMagickがインストールされていない場合、次のようにしてrmagickのインストールを省略してください:
+
+``` bash
+bundle install --without development test rmagick
+```
+
+もしWindows環境で `rmagick` のインストールがうまくいかない場合は [HowTo install rmagick gem on Windows](http://www.redmine.org/projects/redmine/wiki/HowTo_install_rmagick_gem_on_Windows) を参照してください。
+
+##### データベースアダプタ
+
+Redmineはデータベースの設定ファイル `config/database.yml` を読み取って、必要なデータベースアダプタを自動的にインストールします（例: `mysql2` のみを使用するように設定した場合は `mysql2` gemのみがインストールされます）。
+
+もし `config/database.yml` を編集してデータベースアダプタの追加や削除を行ったら、必ず `bundle install --without development test ...` を実行してください。
+
+#### 独自の依存関係の設定 (Gemfile.local)
+
+もしRedmine本体は使用しないgem (例: puma, fcgi) もロードされるようにしたいときは `Gemfile.local` というファイルをRedmineのディレクトリに作成してください。
+
+`bundle install` の実行時にインストールされます。
+
+例:
+``` ruby
   # Gemfile.local
   gem 'puma'
 ```
 
-5\. セッションストア秘密鍵を生成してください。
+### Step 5 - セッションストア秘密鍵の生成
 
-Redmine 1.4.xの場合:
+Railsはセッションハイジャックを防ぐために、セッション情報を格納するcookieをエンコードします。この処理で使われるランダムなキーを生成します。
 
-```
-rake generate_session_store
-```
-
-Redmine 2.xの場合:
-
-```
-rake generate_secret_token
+``` bash
+bundle exec rake generate_secret_token
 ```
 
-6.
+秘密鍵は `config/secrets.yml` に格納することもできます:<br>
+<http://guides.rubyonrails.org/upgrading_ruby_on_rails.html#config-secrets-yml
+Edit>
+
+### Step 6 - データベースのテーブル等の作成
+
 データベース上にテーブルを作成してください。Redmineのインストールディレクトリで下記コマンドを実行します。
 
-```
-RAILS_ENV=production rake db:migrate
-```
-
-これによりテーブルとRedmineの管理者アカウントが作成されます。
-
-もし次のエラーが発生した場合、libopenssl-ruby1.8が必要です。
-
-```
-Rake aborted!
-no such file to load -- net/https
+``` bash
+RAILS_ENV=production bundle exec rake db:migrate
 ```
 
-Ubuntuの場合、以下のコマンドを実行してください。
+**Windowsの場合:**
 
-```
-apt-get install libopenssl-ruby1.8
+``` bash
+set RAILS_ENV=production
+bundle exec rake db:migrate
 ```
 
-7.
+これによりマイグレーションが一つずつ実行されてテーブルが作成され、さらに権限のデータ一式と感立社アカウント（`admin`）が作成されます。
+
+### Step 7 - デフォルトデータ
+
 下記コマンドを実行し、デフォルトデータをデータベースに登録してください:
 
+``` bash
+RAILS_ENV=production bundle exec rake redmine:load_default_data
 ```
-RAILS_ENV=production rake redmine:load_default_data
+
+コマンドを実行中、どの言語のデフォルトデータを登録するのか選択を求められます。なお、コマンドラインで `REDMINE_LANG` 環境変数を指定すると、言語の選択を求められることなく自動的に処理が勧められます。
+
+例: 
+
+UNIX:
+
+``` bash
+RAILS_ENV=production REDMINE_LANG=fr bundle exec rake redmine:load_default_data
 ```
 
-この手順の実行は任意ですが **強く推奨されます。**
-デフォルトのロール、トラッカー、ステータス、ワークフロー、列挙項目がロードされます。
+Windows:
 
-8\. パーミッションの設定
-
-*Windows上で実行する場合はこの手順は省略してください。*
-
-Redmineを実行するユーザーは次のディレクトリに対して書き込み権限が必要です:
-files, log, public/plugin\_assets, tmp
-(tmpが無ければ作成してください。PDFファイルなどを作成する際に使用されます)。
-
+``` bash
+set RAILS_ENV=production
+set REDMINE_LANG=fr
+bundle exec rake redmine:load_default_data
 ```
-mkdir tmp public/plugin_assets
+
+### Step 8 - ファイルシステムのパーミッション
+
+!!! note
+    Windowsではこの手順は不要です。
+
+Redmineを実行するOSのユーザーは、以下のディレクトリに対する書き込み権限が必要です:
+
+1. `files` (添付ファイルの保存ディレクトリ)
+2. `log` (Redmineのログファイル @production.log@)
+3. `tmp` と `tmp/pdf` (もしこれらのディレクトリがなければ作成してください)
+4. `public/plugin_assets` (プラグインが使用する画像やCSS)
+
+例えば、ユーザーアカウント `redmine` でアプリケーションを実行する場合:
+
+``` bash
+mkdir -p tmp tmp/pdf public/plugin_assets
 sudo chown -R redmine:redmine files log tmp public/plugin_assets
 sudo chmod -R 755 files log tmp public/plugin_assets
 ```
 
-9.
+### Step 9 - インストールの確認
+
 WEBrickによるwebサーバを起動して、インストールができたかテストしてください:
 
-Redmine 1.4.xの場合:
-
-```
-ruby script/server webrick -e production
+``` bash
+bundle exec rails server webrick -e production
 ```
 
-redmine 2.xの場合:
+WEBrickが起動したら、ブラウザで <http://localhost:3000/> を開いてください。Redmineのwelcomeページが表示されるはずです。
 
+!!! note:
+    Webrickは通常は開発時に使用すものであり、通常の運用には適していません。動作確認以外には使用しないでください。本番運用においてはPassenger(mod\_rails)、FCGI、またはRackサーバ(Unicorn, Thin, Puma,hellipなど)の利用を検討してください。
+
+### Step 10 - ログイン
+
+デフォルトの管理者アカウントでログインしてください。:
+
+* ログインID: admin
+* パスワード: admin
+
+「管理」→「設定」画面で、アプリケーションのほぼすべての設定を行えます。
+
+設定
+----
+
+Redmineの設定は `config/configuration.yml` というファイルで定義されています。
+
+もしデフォルトの設定を変更したい場合は、`config/configuration.yml.example` をコピーして `config/configuration.yml` を作成してそのファイルを編集してください。ファイル内には数多くのコメントがあるので参考にしてください。
+
+`config/configuration.yml` 内の設定はRailsの実行環境(`production` / `development` / `test`)ごとに分けることもできます。
+
+!!! warning "重要"
+    設定変更後は必ずアプリケーションを再起動してください。
+
+
+### メール・SMTPサーバの設定
+
+メールに関する設定は [メールの設定例](Email_Configuration.md) を参照してください。
+
+### バージョン管理システムの設定
+
+以下の設定が行えます:
+
+* `PATH`環境変数で示すディレクトリに配置されたバージョン管理システムのコマンド名が標準のものではないときに、デフォルトのコマンド名を変更 (Windowsの .bat/.cmd は利用できません)
+* コマンドのフルパスを指定
+
+例 (Subversion):
+
+別のコマンド名を使用:
+
+``` text
+scm_subversion_command: "svn_replacement.exe"
 ```
-ruby script/rails server webrick -e production
+
+フルパスを使用:
+
+``` text
+scm_subversion_command: "C:\Program Files\Subversion\bin\svn.exe"
 ```
 
-WEBrickが起動したら、ブラウザで http://localhost:3000/
-を開いてください。Redmineのwelcomeページが表示されるはずです。
+### 添付ファイル保存ディレクトリ
 
-注意:
-Webrickは通常は開発時に使用すものであり、通常の運用には適していません。動作確認以外には使用しないでください。本番運用においてはPassenger
-(mod\_rails)、FCGI、またはRackサーバ(Unicorn, Thin, Puma,
-hellipなど)の利用を検討してください。
+`attachments_storage_path` の設定により、Redmineが添付ファイルを保存するディレクトリをデフォルトの `files` から変更することができます。
 
-10\. デフォルトの管理者アカウントでログインしてください。:
+例:
 
-\* login: admin\
-\* password: admin
+``` text
+ attachments_storage_path: /var/redmine/files
 
-「管理」画面でアプリケーションの設定を変更できます。
+ attachments_storage_path: D:/redmine/files
+```
 
 ログの設定
 ----------
 
-Redmineはデフォルトでは:infoレベルのログをlogディレクトリに記録します。サイトの利用状況によってはファイルサイズが大きくなるので、ログファイルが無制限に大きくならないようログのローテーションを行うことを検討してください。logrotateのようなシステムユーティリティを使用するか、config/additional\_environment.rbによりローテーションが行えます。
+Redmineはデフォルトでは :info レベルのログを `log` ディレクトリに記録します。サイトの利用状況にもよりますがデータ量は非常に多くなるため、際限なくログのファイルサイズが大きくなるのを防ぐために、ログのローテーションをlogrotateのようなシステムユーティリティを使用するか `config/additional_environment.rb` の設定により行うことを検討してください。
 
-後者の方法でローテーションを行うには、config/additional\_environment.rb.exampleファイルをコピーしてconfig/additional\_environment.rbファイルを作成し、下記の行を追加してください。loggerのデフォルトのログレベルはLogger::DEBUGであり大量の情報が記録されるので、明示的にLogger::INFOレベルに設定する必要があるので注意してください。
+後者の方法でローテーションを行うには、`config/additional_environment.rb.example` をコピーして `config/additional_environment.rb` を作成し、下記の行を追加してください。loggerのデフォルトのログレベルは `Logger::DEBUG` であり大量の情報が記録されるので、明示的に `Logger::INFO` レベルに設定してください。
 
-```
+``` ruby
 #Logger.new(PATH,NUM_FILES_TO_ROTATE,FILE_SIZE)
 config.logger = Logger.new(config.log_path, 2, 1000000)
 config.logger.level = Logger::INFO
 ```
-
-SMTPサーバの設定
-----------------
-
-config/email.yml.example をコピーして config/email.yml
-を作成して編集を行い、SMTP設定を適宜調整してください。
-
-設定例は [メールの設定](/guide/Email_Configuration/)
-を参照してください。
-
-設定変更後は必ずサーバを再起動してください。
 
 バックアップ
 ------------
@@ -296,78 +395,78 @@ config/email.yml.example をコピーして config/email.yml
 
 - データ (Redmineのデータベースに蓄積されています)
 - 添付ファイル
-    (Redmineのインストールディレクトリのfilesディレクトリ以下)
+    (Redmineのインストールディレクトリの `files` ディレクトリ以下)
 
-簡単なバックアップスクリプトの例を示します (mysqlを使用している場合):
+簡単なバックアップスクリプトの例を示します (MySQLを使用している場合):
 
-```
+``` bash
 # Database
-/usr/bin/mysqldump -u <username> -p <password> <redmine_database> | gzip > /path/to/backup/db/redmine_`date +%y_%m_%d`.gz
+/usr/bin/mysqldump -u <username> -p<password> <redmine_database> | gzip > /path/to/backup/db/redmine_`date +%y_%m_%d`.gz
 
 # Attachments
 rsync -a /path/to/redmine/files /path/to/backup/files
 ```
 
-Windows環境でのインストール
----------------------------
+Linux/UNIX環境でのインストールの補足
+------------------------------------
 
-[RubyInstaller](http://rubyinstaller.org/)
-をインストール後、スタートメニューから「Start Command Prompt with
+インストール中にパーミッションに関係した不可解な問題が発生した場合は、セキュリティ強化のツールを無効化してください。これらの問題は拡張ACL、SELinux、AppArmorなどにより引き起こされます。
+
+
+Windows環境でのインストールの補足
+---------------------------------
+
+ビルド済みのRubyの配布パッケージとして [RubyInstaller](http://rubyinstaller.org/) があります。RubyInstallerを使用する場合は、インストール後にスタートメニューから「Start Command Prompt with
 Ruby」を実行してください。
 
-開いたコマンドプロンプト内で、前述の手順を実行してください。
+<u>`RAILS_ENV` 環境変数の指定:</u>
 
-ただし、一部のコマンドはそのままではWindows上では実行できませんので次のように変更してください。
+このガイドに記述されているコマンドを実行するときは、`RAILS_ENV` 環境変数を指定するためのコマンドを実行しておく必要があります。
 
-変更前:
+例えば、次のいずれかの形式でコマンドが記述されている場合:
 
+``` text
+RAILS_ENV=production <any commmand>
 ```
-RAILS_ENV=production rake db:migrate
-RAILS_ENV=production rake redmine:load_default_data
+
+``` text
+<any commmand> RAILS_ENV=production
 ```
 
-変更後:
+Windowsのコマンドプロンプトにおいては次のように二つのコマンドに分けて実行する必要があります:
 
-```
+``` text
 set RAILS_ENV=production
-rake db:migrate
-rake redmine:load_default_data
+<any commmand>
 ```
 
-データベースにMySQLを使う場合は次のコマンドを実行してMySQLのgemをインストールしてください。
+<u>MySQL gemのインストールに関する問題:</u>
+
+データベースにMySQLを使う場合は次のコマンドを実行してMySQLのgemを手作業でインストールしてください。
 
 ```
 gem install mysql
 ```
 
-場合によってはlibmysql.dllをruby/binディレクトリにコピーすることが必要です。libmysql.dllはどれでもよいわけではありません。次のURLのものが動作するようです。
+場合によってはlibmysql.dllをruby/binディレクトリにコピーすることが必要です。libmysql.dllはどれでもよいわけではありません。次のURLのものは動作するようです。
 
 <http://instantrails.rubyforge.org/svn/trunk/InstantRails-win/InstantRails/mysql/bin/libmySQL.dll>
 
-### MySQL 5.1とRails 2.2以上の組み合わせにおける問題
 
-最新のバージョンのMySQLを使っている場合、次のようなエラーが発生することがあります。
-
-```
-!!! The bundled mysql.rb driver has been removed from Ruby 2.2
-```
-
-そして `"gem install mysql"`
-を実行すると大量のエラーが発生します。rakeタスクの実行もすぐに失敗します。
-
-この問題を解決するにはInstantRails
-projectから以下のDLLをダウンロードし、\\Ruby\\bunディレクトリにコピーしてから再度rakeコマンドを実行してみてください。
-
-<http://instantrails.rubyforge.org/svn/trunk/InstantRails-win/InstantRails/mysql/bin/libmySQL.dll>
-
-### Windows 7以降を使用している場合(重要)
+**Windows 7以降を使用している場合(重要)**
 
 Windows 7以降では `localhost`
-がhostsファイルからコメントアウトされ、IPv6がデフォルトとなっています。mysql2のgemはIPv6をサポートしていないため接続が確立されず
-`"Can't connect to MySQL2 server on 'localhost'(10061)"`
+がhostsファイルからコメントアウトされ[^win_localhost]、IPv6がデフォルトとなっています。mysql2のgemはIPv6をサポートしていない[^mysql2_ipv6] ため接続が確立されず
+`"Can't connect to MySQL server on 'localhost' (10061)"`
 というエラーが発生します。IPv6が使われているかどうか確認するにはコマンドラインで
 `ping localhost`
-を実行してください。ターゲット名が"::1:"と表示された場合、IPv6が使用されています。
+を実行してください。pingの宛先として "::1:" と表示された場合、IPv6が使用されています。
+
+[^win_localhost]: <http://serverfault.com/questions/4689/windows-7-localhost-name-resolution-is-handled-within-dns-itself-why>
+[^mysql2_ipv6]: <https://github.com/brianmario/mysql2/issues/279>
+
+<u>対処方法:</u><br>
+`database.yml` 内の `localhost` を `127.0.0.1` に書き換えてください。
 
 手作業でのインストール以外の方法
 --------------------------------
