@@ -9,6 +9,8 @@ markdown_extensions:
   - admonition
   - attr_list
   - footnotes
+  - toc:
+      title: '目次'
 
 pages:
   - Home: index.md

@@ -5,6 +5,7 @@
     最終更新: 2014/08/17
     [[原文](http://www.redmine.org/projects/redmine/wiki/Plugin_Tutorial/93)]
 
+[TOC]
 
 このチュートリアルは Redmine 2.x に基づいています。旧バージョン (Redmine 1.x) のチュートリアルについては [こちら](http://www.redmine.org/projects/redmine/wiki/Plugin_Tutorial?version=66) をご覧ください。このチュートリアルでは Ruby on Rails フレームワーク の経験があることを前提としています。
 

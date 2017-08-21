@@ -5,6 +5,8 @@ Wiki
     最終更新: 2014/08/19
     [[原文](http://www.redmine.org/projects/redmine/wiki/RedmineWikis/21)]
 
+[TOC]
+
 新しいwikiページの作成
 ----------------------
 

@@ -7,6 +7,8 @@ Redmineのカスタムテーマの作成
 
 Redmineはテーマ機能を備えています。テーマはスタイルシート(application.css)の置き換え・部分的な上書きとJavascriptの追加ができます。
 
+[TOC]
+
 新しいテーマの作成
 ------------------
 
@@ -33,7 +35,7 @@ public/themes/my_theme/stylesheets/application.css
 }
 
 /* move the project menu to the right */
-#main-menu { 
+#main-menu {
     left: auto;
     right: 0px;
 }
