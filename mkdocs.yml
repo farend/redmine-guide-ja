@@ -59,6 +59,7 @@ pages:
     - 'Wiki': RedmineWikis.md
     - 'リポジトリ': RedmineRepository.md
     - '» リポジトリの統計': RedmineRepositoryStatistics.md
+    - 'プロジェクトの設定': RedmineProjectSettings.md
     - '添付ファイル': RedmineAttachedFiles.md
 
   - '開発者ガイド — プラグイン':
