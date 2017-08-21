@@ -6,6 +6,8 @@
 
 Redmine 0.8.0以降では、電子メールによるチケットの作成・更新を行うよう設定できます。
 
+[TOC]
+
 設定
 ----
 
@@ -86,7 +88,7 @@ foo: "|/path/to/rdm-mailhandler.rb --url http://redmine.domain --key secret --pr
 IMAPサーバからメールを取得するためにはrakeタスク(`redmine:email:receive_imap`)を使用します。cronからrakeコマンドを実行する際は、rakeコマンドのスイッチとして `-f /path/to/redmine/appdir/Rakefile` を指定してください。指定しなければrakefileが見つからずエラーとなります。以下は30分ごとにメールを取得するためのcronの記述の例です:
 
 ``` text
-*/30 * * * * redmineuser rake -f /path/to/redmine/appdir/Rakefile redmine:email:receive_imap RAILS_ENV="production" host=imap.foo.bar username=redmine@somenet.foo password=xxx 
+*/30 * * * * redmineuser rake -f /path/to/redmine/appdir/Rakefile redmine:email:receive_imap RAILS_ENV="production" host=imap.foo.bar username=redmine@somenet.foo password=xxx
 ```
 
 コマンドはcrontabに1行で記述してください。また、以下に示した、-fオプションおよびcron固有がないrakeコマンドの例も併せてご覧ください。

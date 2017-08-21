@@ -4,6 +4,8 @@
 !!! note ""
     最終更新: 2017/08/21 [[原文](http://www.redmine.org/projects/redmine/wiki/EmailConfiguration/50)]
 
+[TOC]
+
 設定ディレクティブ
 ------------------
 

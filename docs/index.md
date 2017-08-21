@@ -2,6 +2,7 @@
 
 Redmineオフィシャルサイトで公開されている [Redmine Guide](http://www.redmine.org/projects/redmine/wiki/Guide) の日本語訳です。
 
+[TOC]
 
 インストールガイド
 ------------------

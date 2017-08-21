@@ -4,6 +4,8 @@
 !!! note ""
     最終更新: 2015/01/15 [[原文](http://www.redmine.org/projects/redmine/wiki/RedmineMigrate/30)]
 
+[TOC]
+
 Trac
 ----
 

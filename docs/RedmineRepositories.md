@@ -4,6 +4,7 @@
 !!! note ""
     最終更新: 2008/02/10 [[原文](http://www.redmine.org/wiki/redmine/RedmineRepositories/32)]
 
+[TOC]
 
 概要
 ----
@@ -171,7 +172,7 @@ bzrおよびbzrlibが環境変数PATHおよびPYTHONPATHで指定したパスに
 例えば、config/environment.rbに以下のような行を追加します:
 
     ENV['PYTHONPATH'] = '/path/to/pythonlib'
-    ENV['PATH'] = "#{ENV['PATH']}:/path/to/bzr/bin" 
+    ENV['PATH'] = "#{ENV['PATH']}:/path/to/bzr/bin"
 
 Repository user-mapping
 -----------------------
