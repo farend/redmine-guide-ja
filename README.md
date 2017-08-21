@@ -29,7 +29,7 @@ HTMLの生成
 `mkdocs build` コマンドを実行すると `sites` ディレクトリ以下に公開用のHTMLが生成されます。
 
 ```
-mkdocs 
+mkdocs build
 ```
 
 ---
