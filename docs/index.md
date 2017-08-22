@@ -12,8 +12,8 @@ Redmineオフィシャルサイトで公開されている [Redmine Guide](http:
 -   [アップグレード](RedmineUpgrade)
 -   [他システムからの移行](RedmineMigrate)
 
-管理者向けガイド
-----------------
+システム管理者向けガイド
+------------------------
 
 -   [プロジェクトの管理](RedmineProjects)
 -   [ユーザの管理](RedmineUsers)

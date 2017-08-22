@@ -8,4 +8,4 @@
 
 ![](RedmineProjectOverview/redmine-project-overview.png)
 
-画面右上には [「ログイン」](RedmineLogin) と [「登録」](RedmineRegister) というリンクがあります。 [「ログイン」](RedmineLogin) はプロジェクトを利用できるアカウントをもったユーザーがログインするのに使用します。 [「登録」](RedmineRegister) は管理者が設定を行うと表示されます。
+画面右上には [「ログイン」](RedmineLogin) と [「登録」](RedmineRegister) というリンクがあります。 [「ログイン」](RedmineLogin) はプロジェクトを利用できるアカウントをもったユーザーがログインするのに使用します。 [「登録」](RedmineRegister) はシステム管理者が設定を行うと表示されます。
