@@ -2,6 +2,22 @@ body, h1, h2, h3, h4, h5, h6 {
   font-family: "Meiryo","メイリオ","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro",sans-serif;
 }
 
+#news {
+  font-size: 13px;
+  line-height: 120%;
+}
+
+#news ul {
+  margin-top: -12px;
+  margin-bottom: 20px;
+}
+
+#news li {
+  font-size: 13px;
+  line-height: 120%;
+}
+
+
 img {
   /* モバイル画面向けに指定されている width: 100% を解除 */
   width: auto;

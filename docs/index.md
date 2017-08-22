@@ -1,3 +1,26 @@
+!!! hint "Redmineニュース"
+    <div id="news">
+      <script src="http://blog.redmine.jp/items.js"></script>
+      <ul id="blog_articles">
+        <script>
+          <!--
+          var target = $("#blog_articles");
+          for (i = 0, disp_count = 0 ; i < blog_redmine_jp_items.length && disp_count < 3 ; i++) {
+            article = blog_redmine_jp_items[i];
+            ymd = new Date(article.published).toLocaleString("ja-JP").replace(/ .*/, "");
+            target.append("<li><a href='" + article.link + "' target='_blank'>" + article.title + '</a> (' + ymd + ')');
+            disp_count++;
+          }
+          //-->
+        </script>
+      </ul>
+      <a href="http://blog.redmine.jp/">過去のニュース</a> |
+      <a href="http://redmine.jp/overview/">Redmineとは</a> |
+      <a href="http://redmine.jp/install/">インストール</a> |
+      <a href="http://redmine.jp/faq/">FAQ</a> |
+      <a href="http://redmine.jp/community/">コミュニティ</a>
+    </div>
+
 # Redmine Guide 日本語訳
 
 Redmineオフィシャルサイトで公開されている [Redmine Guide](http://www.redmine.org/projects/redmine/wiki/Guide) の日本語訳です。
