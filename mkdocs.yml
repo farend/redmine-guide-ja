@@ -24,7 +24,7 @@ pages:
     - 'アップグレード': RedmineUpgrade.md
     - '他システムからの移行': RedmineMigrate.md
 
-  - '管理者向けガイド':
+  - 'システム管理者向けガイド':
     - 'プロジェクトの管理': RedmineProjects.md
     - 'ユーザの管理': RedmineUsers.md
     - 'グループの管理': RedmineGroups.md
@@ -35,7 +35,7 @@ pages:
 
     - 'アプリケーションの設定': RedmineSettings.md
 
-  - '管理者向けガイド — 高度な設定':
+  - 'システム管理者向けガイド — 高度な設定':
     - 'リポジトリ': RedmineRepositories.md
     - 'メールによるチケット登録': RedmineReceivingEmails.md
     - 'リマインダメールの送信': RedmineReminderEmails.md

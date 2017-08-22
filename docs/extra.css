@@ -25,6 +25,13 @@ pre code {
     border: 1px solid #ddd;
 }
 
+.rst-content li {
+  font-size: 15px;
+  line-height: 155%;
+  margin-top: 0.35em;
+  margin-bottom: 0.35em;
+}
+
 .rst-content .toc {
   border: 1px solid #ccc;
   border-radius: 3px;
@@ -38,10 +45,6 @@ pre code {
   margin-bottom: 0.5em;
 }
 
-
-.wy-plain-list-decimal li, .rst-content .section ol li, .rst-content ol.arabic li, article ol li {
-  margin-bottom: 0.3em;
-}
 .wy-side-nav-search {
   background-color: #b22323;
 }
