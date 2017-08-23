@@ -16,7 +16,6 @@
       </ul>
       <a href="http://blog.redmine.jp/">過去のニュース</a> |
       <a href="http://redmine.jp/overview/">Redmineとは</a> |
-      <a href="http://redmine.jp/install/">インストール</a> |
       <a href="http://redmine.jp/faq/">FAQ</a> |
       <a href="http://redmine.jp/community/">コミュニティ</a>
     </div>
@@ -37,6 +36,11 @@ Redmineオフィシャルサイトで公開されている [Redmine Guide](http:
 
 システム管理者向けガイド
 ------------------------
+
+システム管理者のみが以下の設定を行えます。
+All following configuration settings can only be accessed and controlled by administrators, i.e. by users that have got the administrator flag checked.
+
+### 一般的な設定
 
 -   [プロジェクトの管理](RedmineProjects)
 -   [ユーザの管理](RedmineUsers)

@@ -10,6 +10,11 @@ Redmineのインストール
     * **[My Redmine](https://hosting.redmine.jp/)** (ファーエンドテクノロジー株式会社)<br>
     * **[Planio](https://plan.io/ja/)** (Planio GmbH) <small>※**[無料プラン](https://planio.farend.jp/contents/free/)** あり</small>
 
+!!! tip
+    CentOSとUbuntuに特化した手順例を下記ページに掲載しています。あわせてご覧ください。
+
+    [インストール — Redmine.JP](http://redmine.jp/install/)
+
 [TOC]
 
 動作環境 {: #Requirements }
