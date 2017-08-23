@@ -15,6 +15,8 @@ Redmineオフィシャルサイトで公開されている [Redmine Guide](http:
 システム管理者向けガイド
 ------------------------
 
+以下の設定はシステム管理者のみが参照・変更できます。システム管理者とは、ユーザーの設定画面で「システム管理者」のチェックがONのユーザーです。
+
 -   [プロジェクトの管理](RedmineProjects)
 -   [ユーザの管理](RedmineUsers)
 -   [グループの管理](RedmineGroups)
@@ -42,9 +44,9 @@ Redmineオフィシャルサイトで公開されている [Redmine Guide](http:
 -   [アカウント](RedmineAccounts)
 -   [ログイン](RedmineLogin)
 -   [登録](RedmineRegister)
-
--   Projects
 -   [検索](RedmineSearch)
+
+<!-- -->
 
 -   [概要](RedmineProjectOverview)
 -   [活動](RedmineProjectActivity)
@@ -67,7 +69,11 @@ Redmineオフィシャルサイトで公開されている [Redmine Guide](http:
     -   [リポジトリの統計](RedmineRepositoryStatistics)
 -   [プロジェクトの設定](RedmineProjectSettings)
 
+<!-- -->
+
 -   [添付ファイル](RedmineAttachedFiles)
+
+<!-- -->
 
 -   [Redmineにおけるwiki記法](http://redmine.jp/tech_note/RedmineWikiFormatting)
 
