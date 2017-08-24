@@ -84,7 +84,7 @@ alternateテーマの画面:
 
 ![](RedmineSettings/alternate_theme.png)
 
-テーマは `public/themes/` に格納されています。テーマについての詳細は [テーマ](/guide/HowTo_create_a_custom_Redmine_theme/) を参照してください。
+テーマは `public/themes/` に格納されています。テーマについての詳細は [テーマ](HowTo_create_a_custom_Redmine_theme.md) を参照してください。
 
 ### 既定の言語
 

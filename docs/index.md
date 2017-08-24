@@ -30,15 +30,14 @@ Redmineオフィシャルサイトで公開されている [Redmine Guide](http:
 ------------------
 
 -   [Redmineのインストール](RedmineInstall)
-    -   [メールの設定例](Email_Configuration)
+    -   [メールの設定](Email_Configuration)
 -   [アップグレード](RedmineUpgrade)
 -   [他システムからの移行](RedmineMigrate)
 
 システム管理者向けガイド
 ------------------------
 
-システム管理者のみが以下の設定を行えます。
-All following configuration settings can only be accessed and controlled by administrators, i.e. by users that have got the administrator flag checked.
+以下の設定はシステム管理者のみが参照・変更できます。システム管理者とは、ユーザーの設定画面で「システム管理者」のチェックがONのユーザーです。
 
 ### 一般的な設定
 
@@ -69,9 +68,9 @@ All following configuration settings can only be accessed and controlled by admi
 -   [アカウント](RedmineAccounts)
 -   [ログイン](RedmineLogin)
 -   [登録](RedmineRegister)
-
--   Projects
 -   [検索](RedmineSearch)
+
+<!-- -->
 
 -   [概要](RedmineProjectOverview)
 -   [活動](RedmineProjectActivity)
@@ -94,7 +93,11 @@ All following configuration settings can only be accessed and controlled by admi
     -   [リポジトリの統計](RedmineRepositoryStatistics)
 -   [プロジェクトの設定](RedmineProjectSettings)
 
+<!-- -->
+
 -   [添付ファイル](RedmineAttachedFiles)
+
+<!-- -->
 
 -   [Redmineにおけるwiki記法](http://redmine.jp/tech_note/RedmineWikiFormatting)
 

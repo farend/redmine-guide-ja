@@ -23,11 +23,6 @@ img {
   width: auto;
 }
 
-p {
-  font-size: 15px;
-  line-height: 165%;
-}
-
 code, .rst-content tt {
   font-size: 85%;
   color: #404040;
@@ -35,6 +30,14 @@ code, .rst-content tt {
 
 pre code {
   font-size: 85%;
+}
+
+.rst-content .admonition, .admonition p {
+  font-size: 14px;
+}
+
+.rst-content h2, .rst-content h3, .rst-content h4, .rst-content h5, .rst-content h6 {
+  margin-top: 24px;
 }
 
 .rst-content img {
@@ -46,6 +49,12 @@ pre code {
   line-height: 155%;
   margin-top: 0.35em;
   margin-bottom: 0.35em;
+}
+
+.rst-content p {
+  font-size: 15px;
+  line-height: 165%;
+  margin-bottom: 12px;
 }
 
 .rst-content .toc {

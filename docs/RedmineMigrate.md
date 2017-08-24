@@ -31,7 +31,7 @@ Tracのデータベースにアクセスするにはsqlite-ruby gemが必要で�
 - sqlite: `gem install sqlite-ruby`
 - sqlite3: `gem install sqlite3-ruby`
 
-作業を開始する前に、デフォルトデータがロードされたRedmineデータベースが必要です。 [Redmineのインストール](/guide/RedmineInstall/) を参照してください。
+作業を開始する前に、デフォルトデータがロードされたRedmineデータベースが必要です。 [Redmineのインストール](RedmineInstall.md) を参照してください。
 
 移行スクリプトはTrac 0.10および0.11のsqliteデータベースでの動作確認を行いました。
 
@@ -92,7 +92,7 @@ Mantis importerで移行できる内容:
 
 このスクリプトは異なるMantis 1.0.xのデータベースでテストされています。それ以降の最新のバージョンでも動作するはずです。
 
-作業を開始する前に、デフォルトデータがロードされただけのRedmineデータベースが必要です。 [Redmineのインストール](/guide/RedmineInstall/) を参照してください。
+作業を開始する前に、デフォルトデータがロードされただけのRedmineデータベースが必要です。 [Redmineのインストール](RedmineInstall.md) を参照してください。
 すでにデータが投入されているRedmineのデータベースに移行するには、Ulrichsによる [Non-destructive migration Script](http://foaa.de/old-blog/2010/04/non-destructive-migration-from-mantis-to-redmine/) が利用できます。
 
 [\#10504](http://www.redmine.org/issues/10504) のパッチを適用するのも忘れないでください。

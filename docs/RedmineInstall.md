@@ -347,9 +347,9 @@ Redmineの設定は `config/configuration.yml` というファイルで定義さ
 
 ### メール・SMTPサーバの設定
 
-メールに関する設定は [メールの設定例](Email_Configuration.md) を参照してください。
+メールに関する設定は [メールの設定](Email_Configuration.md) を参照してください。
 
-### バージョン管理システムの設定
+### バージョン管理システムの設定 {: #SCM-settings }
 
 以下の設定が行えます:
 

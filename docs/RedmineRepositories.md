@@ -2,37 +2,34 @@
 ==========
 
 !!! note ""
-    最終更新: 2008/02/10 [[原文](http://www.redmine.org/wiki/redmine/RedmineRepositories/32)]
+    最終更新: 2017/08/24 [[原文](http://www.redmine.org/wiki/redmine/RedmineRepositories/32)]
 
 [TOC]
 
 概要
 ----
 
-Redmineは複数のSCMと連携できます: [Subversion](http://subversion.tigris.org/), [CVS](http://www.nongnu.org/cvs/), [Mercurial](http://www.selenic.com/mercurial/), [Darcs](http://darcs.net/), [Git](http://git-scm.com/) および [Bazaar](http://bazaar-vcs.org/) です.
+Redmineは5種類のバージョン管理システムとの連係に対応しています。
 
-SCMと連携するためには、Redmineが稼働するホストに適切なバイナリをインストールする必要があります。
+|*SCM*|*Supported versions*|*Comments*|
+|:----|:------------------:|:---------|
+|[Bazaar](http://bazaar.canonical.com/en/)|1.0.0.candidate.1 to 2.7.0||
+|[CVS](http://www.nongnu.org/cvs/)|1.12.12, 1.12.13|1.12が必要。CVSNTは動作しない|
+|[Git](https://git-scm.com/)|1.5.4.2 to 2.11.0||
+|[Mercurial](http://www.selenic.com/mercurial/)|1.2 to 4.3.1|1.6以降推奨 ([#9465](http://www.redmine.org/issues/9465))|
+|[Subversion](http://subversion.apache.org/)|1.3 to 1.9.7|1.3以降が必要。Ruby Bindings for Subversionには非対応。1.7.0と1.7.1には問題あり ([#9541](http://www.redmine.org/issues/9541))|
 
-| SCM                                           | 対応するバージョン        | 備考                                                                                                                                                                                  |
-|-----------------------------------------------|---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Bazaar](http://bazaar-vcs.org/)              | 1.0.0.candidate.1 & 2.0.4 |                                                                                                                                                                                       |
-| [CVS](http://www.nongnu.org/cvs/)             | 1.12.12                   | 1.12 required, won't work with CVSNT                                                                                                                                                  |
-| [Darcs](http://darcs.net/)                    | 1.0.7                     |                                                                                                                                                                                       |
-| [Git](http://git-scm.com)                     | 1.5.4.2                   |                                                                                                                                                                                       |
-| [Mercurial](http://www.selenic.com/mercurial/)| 1.2                       | 1.6以上推奨 ([#9465](http://www.redmine.org/issues/9465")                                                                                                                 |
-| [Subversion](http://subversion.apache.org/)    | 1.3, 1.4, 1.5, 1.6 & 1.7  | 1.3以上が必要。SubversionのRuby Bindingsには非対応。Subversion 1.7.0 および 1.7.1 はPassengerとの組み合わせで使うと問題あり ([#9541](http://www.redmine.org/issues/9541)) |
-
-*注1: SCMバイナリはRedmineと同じホストにインストールされていなければなりません:*
+**注1**: バージョン管理システムの適切なコマンドが**Redmineと同じサーバ**にインストールされている必要があります。
 
 例えばRedmineからSubversionリポジトリにアクセスする場合、svnバイナリをRedmineが稼働するホストにインストールする必要があります。
 
-*注2 : SCMバイナリはRedmineから読み取り・実行が可能でなければなりません:*
+*注2 : バージョン管理システムのコマンドはRedmineから実行できるようパスが取っているなどしている必要があります。
 
 以下のいずれかの方法があります。
 
--   SCMバイナリが置かれているディレクトリにPATHが通っている:
-    -   もしSCMのコマンド名がデフォルトのものとは異なる場合、Redmineで設定することができます ([config/configuration.yml](http://blog.redmine.jp/articles/configuration_yml/))
--   Redmineでフルパスを指定することもできます。 ([config/configuration.yml](http://blog.redmine.jp/articles/configuration_yml/))
+-   コマンドにが置かれているディレクトリにPATHが通っている:
+    -   もしコマンド名がデフォルトのものとは異なる場合は、Redmineの[設定ファイル](RedmineInstall.md#SCM-settings)で呼び出すコマンド名を変更できます
+-   Redmineの[設定ファイル](RedmineInstall.md#SCM-settings)でフルパスを指定することもできます。
 
 最後に、「管理」→「設定」画面の「リポジトリ」タブ内「使用するバージョン管理システム」で、バージョン管理システムを有効にするのを忘れないでください。
 
@@ -42,21 +39,30 @@ SCMと連携するためには、Redmineが稼働するホストに適切なバ�
 プロジェクトの設定で「リポジトリ」モジュールが有効であることを確認した上で「リポジトリ」タブを開いてください。
 正しいバージョン管理システムを選択しリポジトリのURLを入力してください。
 
-**重要**: 最初にリポジトリを閲覧するときは、Redmineはすべてのコミットの情報を取得しデータベースに格納します。
-これはリポジトリごとに一回だけ行われますが、非常に時間がかかります。リポジトリに数百のコミットがある場合はタイムアウトすることもあります。
+!!! warning "重要"
+    最初にリポジトリを閲覧するときは、Redmineはすべてのコミットの情報を取得しデータベースに格納します。これはリポジトリごとに一回だけ行われますが、非常に時間がかかります。リポジトリに数百のコミットがある場合はタイムアウトすることもあります。
 
 この問題を避けるために、リポジトリからの情報の取得をオフラインで行うことができます。リポジトリの設定をRedmineで行った後、下記コマンドを入力してください:
 
-    ruby script/runner "Repository.fetch_changesets" -e production
+
+/script/rails runner "Repository.fetch_changesets" -e production
 
 すべてのコミットの情報がRedmineのデータベースに格納されます。
 
-Redmine 0.9以降では、 `fetch_changesets` を実行するための特別なURLも利用できます:
+また、Redmine 0.9以降では `fetch_changesets` を実行するための特別なURLも利用できます:
 
-    http://redmine.example.com/sys/fetch_changesets?key=<WS key> (すべての有効なプロジェクトのチェンジセットを取得)
-    http://redmine.example.com/sys/fetch_changesets?key=<WS key>&id=foo (指定したプロジェクト(例:foo)のみチェンジセットを取得)
+``` bash
+ # すべての有効なプロジェクトのチェンジセットを取得
+http://redmine.example.com/sys/fetch_changesets?key=<WS key>
+
+ # 指定したプロジェクト(例:foo)のみチェンジセットを取得
+http://redmine.example.com/sys/fetch_changesets?key=<WS key>&id=foo
+```
 
 `WS Key` を必ず指定してください。これは、最後に、「管理」→「設定」画面の「リポジトリ」タブ内で設定したAPIキーです。
+
+下記ページの設定例もご覧ください。
+[HowTo setup automatic refresh of repositories in Redmine on commit](http://www.redmine.org/projects/redmine/wiki/HowTo_setup_automatic_refresh_of_repositories_in_Redmine_on_commit)
 
 ### Subversionリポジトリ
 
