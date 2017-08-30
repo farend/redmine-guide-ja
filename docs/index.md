@@ -20,7 +20,7 @@ Redmineオフィシャルサイトで公開されている [Redmine Guide](http:
 ### 一般的な設定
 
 -   [プロジェクトの管理](RedmineProjects)
--   [ユーザの管理](RedmineUsers)
+-   [ユーザーの管理](RedmineUsers)
 -   [グループの管理](RedmineGroups)
 -   [ロールと権限](RedmineRoles)
 -   [課題管理システム](RedmineIssueTrackingSetup)
