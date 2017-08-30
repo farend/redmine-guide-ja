@@ -25,9 +25,9 @@ pages:
     - '他システムからの移行': RedmineMigrate.md
 
   - 'システム管理者向けガイド':
-    - 'プロジェクトの管理': RedmineProjects.md
-    - 'ユーザの管理': RedmineUsers.md
-    - 'グループの管理': RedmineGroups.md
+    - 'プロジェクトに対する管理操作': RedmineProjects.md
+    - 'ユーザに対する管理操作': RedmineUsers.md
+    - 'グループに対する管理操作': RedmineGroups.md
     - 'ロールと権限': RedmineRoles.md
     - '課題管理システム': RedmineIssueTrackingSetup.md
     - 'カスタムフィールド': RedmineCustomFields.md

@@ -45,9 +45,9 @@ Redmineオフィシャルサイトで公開されている [Redmine Guide](http:
 
 ### 一般的な設定
 
--   [プロジェクトの管理](RedmineProjects)
--   [ユーザの管理](RedmineUsers)
--   [グループの管理](RedmineGroups)
+-   [プロジェクトに対する管理操作](RedmineProjects)
+-   [ユーザーに対する管理操作](RedmineUsers)
+-   [グループに対する管理操作](RedmineGroups)
 -   [ロールと権限](RedmineRoles)
 -   [課題管理システム](RedmineIssueTrackingSetup)
 -   [カスタムフィールド](RedmineCustomFields)
