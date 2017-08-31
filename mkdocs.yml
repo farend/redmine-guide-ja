@@ -10,7 +10,7 @@ markdown_extensions:
   - attr_list
   - footnotes
   - toc:
-      title: '目次'
+      title: 'このページの内容'
 
 pages:
   - Home: index.md
