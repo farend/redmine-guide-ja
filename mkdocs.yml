@@ -28,7 +28,7 @@ pages:
     - 'ロールと権限': RedmineRoles.md
     - '課題管理システム': RedmineIssueTrackingSetup.md
     - 'カスタムフィールド': RedmineCustomFields.md
-    - '列挙項目': RedmineEnumerations.md
+    - '選択肢の値': RedmineEnumerations.md
 
     - 'アプリケーションの設定': RedmineSettings.md
 

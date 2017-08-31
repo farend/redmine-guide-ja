@@ -25,7 +25,7 @@ Redmineオフィシャルサイトで公開されている [Redmine Guide](http:
 -   [ロールと権限](RedmineRoles)
 -   [課題管理システム](RedmineIssueTrackingSetup)
 -   [カスタムフィールド](RedmineCustomFields)
--   [列挙項目](RedmineEnumerations)
+-   [選択肢の値](RedmineEnumerations)
 -   [アプリケーションの設定](RedmineSettings)
 
 ### 高度な設定
