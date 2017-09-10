@@ -95,8 +95,8 @@ Redmineオフィシャルサイトで公開されている [Redmine Guide](http:
     -   ロードマップ
         -   バージョンの概要
 -   [時間管理 (工数管理)](RedmineTimeTracking)
-    -   [作業時間の記録: 詳細](RedmineTimelogDetails)
-    -   [作業時間の記録: レポート](RedmineTimelogReport)
+    -   [作業時間: 詳細](RedmineTimelogDetails)
+    -   [作業時間: レポート](RedmineTimelogReport)
 -   [ガントチャート](RedmineGantt)
 -   [カレンダー](RedmineCalendar)
 -   [ニュース](RedmineNews)

@@ -2,7 +2,7 @@ Redmineのインストール
 =====================
 
 !!! note ""
-    最終更新: 2017/08/21 [[原文](http://www.redmine.org/projects/redmine/wiki/RedmineInstall/281)]
+    最終更新: 2017/09/06 [[原文](http://www.redmine.org/projects/redmine/wiki/RedmineInstall/282)]
 
 !!! tip
     インストール作業やサーバの運用が不要な<strong>クラウドサービス</strong>もあります。
@@ -51,7 +51,7 @@ Redmineの各バージョンで必要となるRubyのバージョンは以下の
 ### データベース
 
 - MySQL 5.0 - 5.5
-    - MySQL 5.6以降とMariaDBは既知の問題があります ([#19344](http://www.redmine.org/issues/19344), [#19395](http://www.redmine.org/issues/19395), [#17460](http://www.redmine.org/issues/17460), [#25416](http://www.redmine.org/issues/25416)).
+    - MySQL 5.6以降とMariaDBは既知の問題があります ([#19344](http://www.redmine.org/issues/19344), [#19395](http://www.redmine.org/issues/19395), [#17460](http://www.redmine.org/issues/17460)).
 - PostgreSQL 8.2以降
     - データベースの日付形式がISO(PostgreSQLのデフォルト)であることを確認してください。次のSQL文で設定できます: `ALTER DATABASE "redmine_db" SET datestyle="ISO,MDY";`
     - PostgreSQL 8.4.0 と 8.4.1に存在するバグに起因するRedmineの不具合が報告されています([#4259](http://www.redmine.org/issues/4259), [#4259](http://www.redmine.org/issues/4314))。それらのバグはPostgreSQL 8.4.2で修正済みです。
