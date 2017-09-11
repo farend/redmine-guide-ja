@@ -69,6 +69,15 @@ pre code {
   margin-bottom: 0.5em;
 }
 
+.rst-content .toc>ul {
+  margin-bottom: 0;
+}
+
+.rst-content .toc li {
+  line-height: 120%;
+  font-size: 13px;
+}
+
 .wy-side-nav-search {
   background-color: #b22323;
 }

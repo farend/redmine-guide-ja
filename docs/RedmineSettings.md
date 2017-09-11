@@ -152,9 +152,9 @@ Gravatarアイコンを持っていないユーザーに対して表示するア
 
 *デフォルト: 4*
 
-### パスワードの再発行
+### パスワードの再発行 {: #Lost-password }
 
-パスワード再発行機能が有効になります。 *デフォルト: 有効*
+[パスワード再発行機能](RedmineAccounts#Password-lost)が有効になります。 *デフォルト: 有効*
 
 ### OpenIDによるログインと登録 {: #Allow-OpenID-login-and-registration }
 
