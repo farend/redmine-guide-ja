@@ -81,3 +81,8 @@ pre code {
 .wy-side-nav-search {
   background-color: #b22323;
 }
+
+.wy-side-nav-search input[type="text"] {
+  width: auto;
+  border-color: #fff;
+}
