@@ -47,6 +47,7 @@ Redmineオフィシャルサイトで公開されている [Redmine Guide](http:
 -   [ログイン](RedmineLogin)
 -   [登録](RedmineRegister)
 -   [検索](RedmineSearch)
+-   [マイページ](RedmineMyPage)
 
 <!-- -->
 
