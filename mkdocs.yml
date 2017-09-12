@@ -47,6 +47,7 @@ pages:
     - 'ログイン': RedmineLogin.md
     - '登録': RedmineRegister.md
     - '検索': RedmineSearch.md
+    - 'マイページ': RedmineMyPage.md
     - '「概要」': RedmineProjectOverview.md
     - '活動': RedmineProjectActivity.md
     - 'チケット': RedmineIssues.md
