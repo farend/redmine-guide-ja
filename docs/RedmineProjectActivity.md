@@ -2,29 +2,28 @@
 ====
 
 !!! note ""
-    最終更新: 2009/09/13
-    [[原文](http://www.redmine.org/projects/redmine/wiki/RedmineProjectActivity/8)]
+    最終更新: 2017/11/23
+    [[原文](http://www.redmine.org/projects/redmine/wiki/RedmineProjectActivity/10)]
 
-***活動*** 画面は、プロジェクトにおける全ての作業の時系列による記録を表示します。
-次のものが含まれます。
+***活動*** 画面は、プロジェクト内のすべての活動の記録を時系列で表示します。
 
--   チケットの登録や更新
--   リポジトリに対するチェックイン (チェンジセット)
--   ニュース
-
-上記はデフォルトで表示されます。Wiki、フォーラムの更新情報を表示するよう設定することもできます。
-
-![](RedmineProjectActivity/projects_redmine_activity.png)
+以下の情報が含まれます:
 
 -   ![](redmine-dist-images/ticket.png) チケットの新規登録
--   ![](redmine-dist-images/ticket_edit.png) チケットの編集
+-   ![](redmine-dist-images/ticket_edit.png) チケットのステータス変更
 -   ![](redmine-dist-images/ticket_checked.png) チケットが完了した
--   ![](redmine-dist-images/ticket_note.png) チケットに注釈が追加された
+-   ![](redmine-dist-images/ticket_note.png) チケットへの注記の追加
 -   ![](redmine-dist-images/changeset.png) リポジトリへのコミット
--   ![](redmine-dist-images/news.png) ニュースに新たな項目が追加された
--   ![](redmine-dist-images/message.png) フォーラムへのメッセージの追加または更新
--   ![](redmine-dist-images/comments.png) フォーラムのメッセージにコメントを追加
--   ![](redmine-dist-images/wiki_edit.png) Wikiへのページの追加または更新
--   ![](redmine-dist-images/attachment.png) 「ファイル」に新たにファイルが追加された
--   ![](redmine-dist-images/document.png) 「文書」への新たなファイルの追加または更新
--   ![](redmine-dist-images/projects.png) プロジェクトの新規作成
+-   ![](redmine-dist-images/news.png) 新しいニュースの追加
+-   ![](redmine-dist-images/message.png) フォーラムへのメッセージ追加
+-   ![](redmine-dist-images/comments.png) フォーラムのメッセージへのコメント追加
+-   ![](redmine-dist-images/wiki_edit.png) Wikiページの追加または更新
+-   ![](redmine-dist-images/attachment.png) 「ファイル」モジュールまたは「文書」モジュールへのファイル追加
+-   ![](redmine-dist-images/document.png) 「文書」モジュールへの新たな文書追加
+-   ![](redmine-dist-images/time.png) 作業時間の記録
+
+画面右側のサイドバー内のチェックボックスにより、表示する情報を選択できます。
+
+活動の情報は、Atomフィードとしても取得可能です。
+
+![](RedmineProjectActivity/projects_redmine_activity.png)
