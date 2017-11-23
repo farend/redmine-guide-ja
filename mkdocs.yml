@@ -51,6 +51,7 @@ pages:
     - '» チケット一覧': RedmineIssueList.md
     - '»» チケットのサマリー': RedmineIssueSummary.md
     - '» ロードマップ': RedmineRoadmap.md
+    - '»» バージョンの概要画面': RedmineVersion.md
     - '時間管理': RedmineTimeTracking.md
     - '» 作業時間の記録: 詳細': RedmineTimelogDetails.md
     - '» 作業時間の記録: レポート': RedmineTimelogReport.md
