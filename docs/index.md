@@ -93,8 +93,8 @@ Redmineオフィシャルサイトで公開されている [Redmine Guide](http:
 -   [チケット](RedmineIssues)
     -   [チケット一覧](RedmineIssueList)
         -   [チケットのサマリー](RedmineIssueSummary)
-    -   ロードマップ
-        -   バージョンの概要
+    -   [ロードマップ](RedmineRoadmap)
+        -   [バージョンの概要画面](RedmineVersion)
 -   [時間管理 (工数管理)](RedmineTimeTracking)
     -   [作業時間: 詳細](RedmineTimelogDetails)
     -   [作業時間: レポート](RedmineTimelogReport)

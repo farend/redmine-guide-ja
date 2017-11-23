@@ -32,9 +32,13 @@ HTMLの生成
 mkdocs build
 ```
 
+関連情報
+--------
+
+* [ドキュメント生成ツール「MkDocs」でRedmine Guide日本語訳のWebサイトを作ってみた](https://www.farend.co.jp/blog/2017/10/redmine-guide-migration-to-mkdocs/)
+
 ---
 
-Copyright (C) ファーエンドテクノロジー株式会社
+Copyright (C) [ファーエンドテクノロジー株式会社](https://www.farend.co.jp/)
 
-クリエイティブ・コモンズ・ライセンス 表示 - 継承 4.0 国際 (CC BY-SA 4.0) 
-<https://creativecommons.org/licenses/by-sa/4.0/deed.ja>
+[クリエイティブ・コモンズ・ライセンス 表示 - 継承 4.0 国際 (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/deed.ja)
