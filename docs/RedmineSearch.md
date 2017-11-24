@@ -2,8 +2,8 @@
 ====
 
 !!! note ""
-    最終更新: 2015/04/19
-    [[原文](http://www.redmine.org/projects/redmine/wiki/RedmineSearch/5)]
+    最終更新: 2017/11/24
+    [[原文](http://www.redmine.org/projects/redmine/wiki/RedmineSearch/7)]
 
 [TOC]
 
@@ -33,24 +33,20 @@ Redmineの画面右上に検索ボックスがあります。キーワードを�
 
 ### カスタムフィールドの検索
 
-カスタムフィールドを検索対象に含めたい場合は、カスタムフィールドの設定画面で **検索対象** のチェックボックスを有効にしてください。
+カスタムフィールドはデフォルトでは検索対象ではありません。検索対象に含めたい場合は、カスタムフィールドの設定画面で **検索対象** のチェックボックスを有効にしてください。
 
 ![](RedmineSearch/Searchable.png)
 
-<!--
+### 検索結果
 
-h2. 検索結果
+以下のスクリーンショットは "test issue" というキーワードで[Redmine公式サイト](http://www.redmine.org/)を検索してみた様子です。
 
-Here is a sample results page from this site on "test issue".
+* 多数の検索でヒットした情報へのリンク
+* 検索キーワードのハイライト表示
+* オブジェクトの種類ごとの検索結果へのリンク（例: News）
+* 検索結果の種類を示すアイコン （例: チェンジセット、チケット、フォーラムのコメント）
 
-* Many links to go to what was found.
-* Unique text highlighting by search terms.
-* Capability to jump to groupings of results (ie News items).
-* Leading icons to categorize type of result (ie changeset, issue, comment)
-
-!Results.png!
-
--->
+![](RedmineSearch/Results.png)
 
 Search controller
 -----------------
