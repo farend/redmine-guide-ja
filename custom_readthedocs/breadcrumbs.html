@@ -1,4 +1,16 @@
 {% if page.ancestors != [] %} {# トップページでは breadcrumbs 非表示 #}
+  <div style="margin: 0 0 1em 0;">
+    <script>
+      if (Math.floor(Math.random() * 2) == 0) {
+        document.write('<a href="https://hosting.redmine.jp/"><img src="/redmine_jp/my_redmine_banner_728_90.png" srcset="/redmine_jp/my_redmine_banner_1456_180.png"></a>');
+      } else {
+        document.write('<a href="https://plan.io/ja/"><img src="/redmine_jp/planio_banner_728_90.png" srcset="/redmine_jp/planio_banner_1456_180.png"></a>');
+      }
+    </script>
+    <noscript>
+      <a href="https://hosting.redmine.jp/"><img src="/redmine_jp/my_redmine_banner_728_90.png" srcset="/redmine_jp/my_redmine_banner_1456_180.png"></a>
+    </noscript>
+  </div>
   <div role="navigation" aria-label="breadcrumbs navigation">
     <ul class="wy-breadcrumbs">
       <li><a href="{{ nav.homepage.url }}">Docs</a> &raquo;</li>
