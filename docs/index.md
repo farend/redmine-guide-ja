@@ -88,7 +88,7 @@ Redmineオフィシャルサイトで公開されている [Redmine Guide](http:
 
 <!-- -->
 
--   [概要](RedmineProjectOverview)
+-   [「概要」](RedmineProjectOverview)
 -   [活動](RedmineProjectActivity)
 -   [チケット](RedmineIssues)
     -   [チケット一覧](RedmineIssueList)
