@@ -3,7 +3,7 @@
 
 !!! note ""
     最終更新: 2017/12/23
-    [[原文](http://www.redmine.org/projects/redmine/wiki/RedmineAccounts/11)]
+    [[原文](http://www.redmine.org/projects/redmine/wiki/RedmineAccounts/12)]
 
 [TOC]
 
@@ -20,7 +20,7 @@
 
 ### パスワード変更
 
-パスワードを変更するには、現在のパスワードと、新しいパスワードを2回入力してください。パスワードの文字数は8文字以上でなければなりません（最低文字数はシステム管理者が設定変更できます。「[パスワードの最低必要文字数](RedmineSettings#Minimum-password-length)」を参照）。
+パスワードを変更するには、「個人設定」画面内の「パスワード変更」をクリックした後、現在のパスワードと、新しいパスワードを2回入力してください。パスワードの文字数は8文字以上でなければなりません（最低文字数はシステム管理者が設定変更できます。「[パスワードの最低必要文字数](RedmineSettings#Minimum-password-length)」を参照）。
 
 ただし、アカウントが外部認証(LDAP)を使用している場合には、Redmineでパスワードを変更することはできません。
 
