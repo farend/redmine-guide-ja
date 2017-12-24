@@ -20,7 +20,7 @@
       <a href="http://redmine.jp/community/">コミュニティ</a>
     </div>
 
-# Redmine Guide 日本語訳
+# Redmineガイド
 
 Redmineオフィシャルサイトで公開されている [Redmine Guide](http://www.redmine.org/projects/redmine/wiki/Guide) の日本語訳です。
 
@@ -149,9 +149,10 @@ Redmineオフィシャルサイトで公開されている [Redmine Guide](http:
 !!! tip "解説書 「Redmine実践ガイド」"
     <div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/488337968X/redmine-22/ref=nosim/" name="amazletlink" target="_blank"><img src="https://images-fe.ssl-images-amazon.com/images/I/51yBVTM6orL._SL160_.jpg" alt="Redmine実践ガイド 理論と実践、事例で学ぶ新しいプロジェクトマネジメント" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/488337968X/redmine-22/ref=nosim/" name="amazletlink" target="_blank">Redmine実践ガイド 理論と実践、事例で学ぶ新しいプロジェクトマネジメント</a></div><div class="amazlet-detail">株式会社アジャイルウェア <br />ソシム <br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/488337968X/redmine-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>
 
-Redmine Guide 日本語訳について
-------------------------------
+Redmineガイドについて
+---------------------
 
 - この文書は、Redmineの公式サイトで公開されているマニュアル「[Redmine Guide](http://www.redmine.org/projects/redmine/wiki/Guide)」の日本語訳です。
+- このサイトのソースコードは [GitHub](https://github.com/farend/redmine-guide-ja) で公開しています。
 - クリエイティブ・コモンズ・ライセンス 表示 - 継承 4.0 国際 (CC BY-SA 4.0) に従う限り、自由に共有・翻案できます。
 - 修正の提案等は [GitHub](https://github.com/farend/redmine-guide-ja) でお願いします。

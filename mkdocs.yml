@@ -1,4 +1,4 @@
-site_name: Redmine Guide 日本語訳
+site_name: Redmineガイド
 theme: readthedocs
 theme_dir: custom_readthedocs
 extra_css: [extra.css]
