@@ -1,7 +1,7 @@
-Redmine Guide 日本語訳
-======================
+Redmineガイド
+=============
 
-「Redmine Guide 日本語訳」  <http://guide.redmine.jp/> のWebサイトのソースコードです。ドキュメント生成ツール [MkDocs](http://www.mkdocs.org/) を使っています。
+Webサイト「Redmineガイド」  <http://guide.redmine.jp/> のソースコードです。ドキュメント生成ツール [MkDocs](http://www.mkdocs.org/) を使っています。
 
 MkDocsのインストール
 --------------------
