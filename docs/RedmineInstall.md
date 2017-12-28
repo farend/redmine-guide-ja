@@ -2,7 +2,7 @@ Redmineのインストール
 =====================
 
 !!! note ""
-    最終更新: 2017/09/06 [[原文](http://www.redmine.org/projects/redmine/wiki/RedmineInstall/282)]
+    最終更新: 2017/12/28 [[原文](http://www.redmine.org/projects/redmine/wiki/RedmineInstall/287)]
 
 [TOC]
 
@@ -76,14 +76,23 @@ trunkは正常に動作しないこともあります。
 #### MySQLの場合:
 
 ``` sql
+CREATE DATABASE redmine CHARACTER SET utf8mb4;
+CREATE USER 'redmine'@'localhost' IDENTIFIED BY 'my_password';
+GRANT ALL PRIVILEGES ON redmine.* TO 'redmine'@'localhost';
+```
+
+MySQL [5.5.2](https://dev.mysql.com/doc/relnotes/mysql/5.5/en/news-5-5-3.html)  以前の場合、 [utf8mb4](https://dev.mysql.com/doc/refman/5.5/en/charset-unicode-utf8mb4.html) ではなく **utf8** を指定してください。
+
+``` sql
 CREATE DATABASE redmine CHARACTER SET utf8;
 CREATE USER 'redmine'@'localhost' IDENTIFIED BY 'my_password';
 GRANT ALL PRIVILEGES ON redmine.* TO 'redmine'@'localhost';
 ```
 
-MySQL 5.0.2以前の場合 - `CREATE USER` の代わりに以下を実行してください:
+MySQL [5.0.2](https://docs.oracle.com/cd/E17952_01/mysql-5.0-en/grant.html) 以前の場合 - `CREATE USER` の代わりに以下を実行してください:
 
 ``` sql
+ CREATE DATABASE redmine CHARACTER SET utf8;
 grant all privileges on redmine.* to 'redmine'@'localhost' identified by 'my_password';
 ```
 
@@ -299,6 +308,12 @@ sudo chown -R redmine:redmine files log tmp public/plugin_assets
 sudo chmod -R 755 files log tmp public/plugin_assets
 ```
 
+ 注意: これらのディレクトリにすでにファイルが存在する場合（例: バックアップからリストアした場合など）、ファイルに実行属性がついていないことを確認してください。
+
+``` bash
+sudo find files log tmp public/plugin_assets -type f -exec chmod -x {} +
+```
+
 ### Step 9 - インストールの確認
 
 WEBrickによるwebサーバを起動して、インストールができたかテストしてください:
@@ -371,7 +386,7 @@ scm_subversion_command: "C:\Program Files\Subversion\bin\svn.exe"
  attachments_storage_path: D:/redmine/files
 ```
 
-ログの設定
+ログの設定 {: #Logging-configuration }
 ----------
 
 Redmineはデフォルトでは :info レベルのログを `log` ディレクトリに記録します。サイトの利用状況にもよりますがデータ量は非常に多くなるため、際限なくログのファイルサイズが大きくなるのを防ぐために、ログのローテーションをlogrotateのようなシステムユーティリティを使用するか `config/additional_environment.rb` の設定により行うことを検討してください。
