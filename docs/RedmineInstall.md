@@ -395,7 +395,7 @@ Redmineはデフォルトでは :info レベルのログを `log` ディレク�
 
 ``` ruby
 #Logger.new(PATH,NUM_FILES_TO_ROTATE,FILE_SIZE)
-config.logger = Logger.new(config.log_path, 2, 1000000)
+config.logger = Logger.new('/path/to/logfile.log', 2, 1000000)
 config.logger.level = Logger::INFO
 ```
 
