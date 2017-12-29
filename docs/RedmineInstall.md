@@ -66,7 +66,7 @@ trunkは正常に動作しないこともあります。
 
 ### Step 1 - Redmine本体のインストール
 
-リリースパッケージを [ダウンロード](http://www.redmine.jp/download/)
+リリースパッケージを [ダウンロード](http://redmine.jp/download/)
 するか、リポジトリからチェックアウトしてRedmineのソースコードを取得してください。
 
 ### Step 2 - 空のデータベースとユーザーの作成
