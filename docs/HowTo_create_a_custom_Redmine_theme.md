@@ -2,8 +2,8 @@ Redmineのカスタムテーマの作成
 =============================
 
 !!! note ""
-    最終更新: 2012/03/04
-    [[原文](http://www.redmine.org/projects/redmine/wiki/HowTo_create_a_custom_Redmine_theme/5)]
+    最終更新: 2018/01/07
+    [[原文](http://www.redmine.org/projects/redmine/wiki/HowTo_create_a_custom_Redmine_theme/9)]
 
 Redmineはテーマ機能を備えています。テーマはスタイルシート(application.css)の置き換え・部分的な上書きとJavascriptの追加ができます。
 
@@ -49,6 +49,11 @@ public/themes/my_theme/stylesheets/application.css
 ----------------------
 
 `javascripts/theme.js` というファイルにJavascirptを記述しておくと、Redmineの各画面で自動的に読み込まれます(Redmine 1.1.0以上で対応)。
+
+faviconの追加
+-------------
+
+`favicon` ディレクトリ内に独自のfaviconを置くと、Redmineの各画面でデフォルトのfaviconの代わりに自動的に読み込まれます。faviconのファイル名は任意の名前でかまいません。
 
 テーマの適用
 ------------
