@@ -2,8 +2,8 @@
 ========================
 
 !!! note ""
-    最終更新: 2017/08/31
-    [[原文](http://www.redmine.org/projects/redmine/wiki/RedmineUsers/17)]
+    最終更新: 2018/01/08
+    [[原文](http://www.redmine.org/projects/redmine/wiki/RedmineUsers/19)]
 
 [TOC]
 
@@ -20,7 +20,7 @@
 -   **作成日:** ユーザーアカウントが作成された日時
 -   **最終接続日:** そのユーザーが最後にログインした日時
 
-![](RedmineUsers/userlist.png)
+![](RedmineUsers/users-list@2x.png)
 
 **アカウントの状態:**
 
