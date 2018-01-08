@@ -3,7 +3,7 @@
 
 !!! note ""
     最終更新: 2018/01/08
-    [[原文](http://www.redmine.org/projects/redmine/wiki/RedmineRegister/8)]
+    [[原文](http://www.redmine.org/projects/redmine/wiki/RedmineRegister/9)]
 
 [TOC]
 
@@ -26,7 +26,9 @@
 
 ### 手動でアカウントを有効化
 
-「登録」画面で必要な情報を入力後、システム管理者による承認を待つ必要があります。システム管理者は管理画面でユーザーのアカウントを有効化します。その後ユーザーはログインできるようになります。
+「登録」画面で必要な情報を入力後、システム管理者による承認を待つ必要があります。システム管理者は「管理」→「[ユーザー](RedmineUsers.md)」画面でユーザーのアカウントを有効化します。その後ユーザーはログインできるようになります。
+
+![](RedmineRegister/activate-user-account@2x.png)
 
 ### 自動でアカウントを有効化
 
