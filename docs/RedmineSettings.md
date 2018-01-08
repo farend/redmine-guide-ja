@@ -2,7 +2,9 @@
 ======================
 
 !!! note ""
-    最終更新: 2018/01/07 [原文](http://www.redmine.org/projects/redmine/wiki/RedmineSettings/69)
+    最終更新: 2018/01/08 [[原文](http://www.redmine.org/projects/redmine/wiki/RedmineSettings/70)]
+
+「管理」→「設定」画面では、システム管理者はさまざまなグローバルレベルのアプリケーションの設定が行えます。
 
 [TOC]
 
