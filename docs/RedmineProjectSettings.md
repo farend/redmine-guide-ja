@@ -2,8 +2,10 @@
 ==================
 
 !!! note ""
-  最終更新: 2017/08/22
-  [原文](http://www.redmine.org/projects/redmine/wiki/RedmineProjectSettings/35)
+    最終更新: 2017/08/22
+    [[原文](http://www.redmine.org/projects/redmine/wiki/RedmineProjectSettings/36)]
+
+あるプロジェクトにおいて必要な権限を持っているメンバーは、プロジェクトの「設定」タブでそのプロジェクトに関する設定が行えます。
 
 [TOC]
 
