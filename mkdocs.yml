@@ -19,6 +19,7 @@ pages:
     - 'Redmineのインストール': RedmineInstall.md
     - '» メールの設定例': Email_Configuration.md
     - 'アップグレード': RedmineUpgrade.md
+    - 'Redmineのバックアップとリストア': RedmineBackupRestore.md
     - '他システムからの移行': RedmineMigrate.md
 
   - 'システム管理者向けガイド':
