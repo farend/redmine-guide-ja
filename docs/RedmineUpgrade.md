@@ -2,7 +2,7 @@
 ==============
 
 !!! note ""
-    最終更新: 2017/08/21 [[原文](http://www.redmine.org/projects/redmine/wiki/RedmineUpgrade/80)]
+    最終更新: 2018/01/14 [[原文](http://www.redmine.org/projects/redmine/wiki/RedmineUpgrade/81)]
 
 [TOC]
 
@@ -16,35 +16,7 @@ Step 2 - バックアップ
 
 データベースおよびアップロードされたファイルのバックアップをお勧めします。通常はアップグレードは安全に行えますが、万一の時に備えてバックアップをとっておくのが安全です。
 
-### filesディレクトリのバックアップ
-
-Redmineにアップロードされたファイルはすべて `files/` ディレクトリに保存されています。このディレクトリの内容を他の場所にコピーすることでバックアップとすることができます。
-
-### データベース
-
-#### MySQL
-
-`mysqldump` コマンドでMySQLデータベースの内容をテキストファイルにバックアップすることができます。
-
-例:
-
-``` sh
-/usr/bin/mysqldump -u <username> -p<password> <redmine_database> | gzip > /path/to/backup/db/redmine_`date +%y_%m_%d`.gz
-```
-
-#### SQLite
-
-SQLiteのデータベースは単一のファイルに全ての内容が格納されているので、そのファイルを別の場所にコピーすることでバックアップとすることができます。
-
-#### PostgreSQL
-
-`pg_dump` コマンドでPostgreSQLデータベースの内容をテキストファイルにバックアップできます。
-
-例:
-
-``` sh
-/usr/bin/pg_dump -U <username> -Fc --file=redmine.sqlc <redmine_database>
-```
+Redmineのデータをバックアップする方法については [Redmineのバックアップとリストア](RedmineBackupRestore.md) を参照してください。
 
 Step 3 - アップグレードの実行
 -----------------------------
