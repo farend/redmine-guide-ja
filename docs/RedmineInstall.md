@@ -408,15 +408,7 @@ config.logger.level = Logger::INFO
 - 添付ファイル
     (Redmineのインストールディレクトリの `files` ディレクトリ以下)
 
-簡単なバックアップスクリプトの例を示します (MySQLを使用している場合):
-
-``` bash
-# Database
-/usr/bin/mysqldump -u <username> -p<password> <redmine_database> | gzip > /path/to/backup/db/redmine_`date +%y_%m_%d`.gz
-
-# Attachments
-rsync -a /path/to/redmine/files /path/to/backup/files
-```
+詳しくは [Redmineのバックアップとリストア](RedmineBackupRestore.md) を参照してください。
 
 Linux/UNIX環境でのインストールの補足
 ------------------------------------
