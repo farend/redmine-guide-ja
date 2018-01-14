@@ -32,6 +32,7 @@ Redmineオフィシャルサイトで公開されている [Redmine Guide](http:
 -   [Redmineのインストール](RedmineInstall)
     -   [メールの設定](Email_Configuration)
 -   [アップグレード](RedmineUpgrade)
+-   [Redmineのバックアップとリストア](RedmineBackupRestore)
 -   [他システムからの移行](RedmineMigrate)
 
 !!! tip "My Redmine — Redmineのクラウドサービス"
