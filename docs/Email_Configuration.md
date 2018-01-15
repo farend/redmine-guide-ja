@@ -2,7 +2,7 @@
 ============
 
 !!! note ""
-    最終更新: 2017/08/21 [[原文](http://www.redmine.org/projects/redmine/wiki/EmailConfiguration/50)]
+    最終更新: 2018/01/15 [[原文](http://www.redmine.org/projects/redmine/wiki/EmailConfiguration/52)]
 
 [TOC]
 
@@ -39,18 +39,20 @@
 #### 非同期送信
 
 `:async_smtp` と `:async_sendmail`
-は非同期送信を行います。これによりRedmineはメールの送信を待たずに次の画面を表示します。詳しくは
+は非同期送信を行います。非同期送信の設定を行うと、Redmineはメールの送信完了を待つことなく次の画面を表示します。詳しくは
 [Asynchronous Email
 Delivery](http://redmineblog.com/articles/asynchronous-email-delivery/)
 をご覧ください。SMTPサーバによってはspam対策として処理開始前に待ち時間を設定している場合があり、非同期送信を設定していない場合はRedmineの処理も待たされてしまいます（[10秒](https://community.bitnami.com/t/updating-an-issue-in-redmine-takes-10-seconds/4421)がよくある値です。詳しくは [#11376](http://www.redmine.org/issues/11376) を参照してください）。
 
-非同期送信を利用する場合は、SMTPの設定は `async_smtp_settings` を使用します:
+非同期送信を利用する場合は、SMTPの設定を指定するには `smtp_settings` ではなく `async_smtp_settings` を使用します:
 
 ``` yaml
 development:
   email_delivery:
     delivery_method: :async_smtp
-    async_smtp_settings:
+    async_smtp_settings:  # smtp_settings ではありません
+      address: ...
+      port: ...
     ...
 ```
 
@@ -100,7 +102,7 @@ production:
     smtp_settings:
       enable_starttls_auto: true
       address: "smtp.gmail.com"
-      port: '587'
+      port: 587
       domain: "smtp.gmail.com"
       authentication: :plain
       user_name: "your_email@gmail.com"
@@ -146,7 +148,7 @@ production:
     smtp_settings:
       enable_starttls_auto: true
       address: "smtp.office365.com"
-      port: '587'
+      port: 587
       domain: "your_domain.com"
       authentication: :login
       user_name: "email@your_domain.com"
@@ -205,7 +207,7 @@ default:
       arguments: "-i"
 ```
 
-上記の設定例は送信方法として `:sendmail` を指定しているため `sendmail_settings` の設定が使われています。もし `:smtp` または `:async_smtp` を指定している場合は `:smtp_setting` を使用してください。
+上記の設定例は送信方法として `:sendmail` を指定しているため `sendmail_settings` の設定が使われています。もし `:smtp` または `:async_smtp` を指定している場合は `:smtp_settings` を使用してください。
 
 
 ### エラー: "Timeout:Error" due to SSL SMTP server connection
