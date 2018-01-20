@@ -2,7 +2,7 @@ Redmineのインストール
 =====================
 
 !!! note ""
-    最終更新: 2017/12/28 [[原文](http://www.redmine.org/projects/redmine/wiki/RedmineInstall/287)]
+    最終更新: 2018/01/20 [[原文](http://www.redmine.org/projects/redmine/wiki/RedmineInstall/290)]
 
 [TOC]
 
@@ -41,9 +41,9 @@ Redmineの各バージョンで必要となるRubyのバージョンは以下の
 
 - MySQL 5.0 - 5.5
     - MySQL 5.6以降とMariaDBは既知の問題があります ([#19344](http://www.redmine.org/issues/19344), [#19395](http://www.redmine.org/issues/19395), [#17460](http://www.redmine.org/issues/17460)).
-- PostgreSQL 8.2以降
-    - データベースの日付形式がISO(PostgreSQLのデフォルト)であることを確認してください。次のSQL文で設定できます: `ALTER DATABASE "redmine_db" SET datestyle="ISO,MDY";`
-    - PostgreSQL 8.4.0 と 8.4.1に存在するバグに起因するRedmineの不具合が報告されています([#4259](http://www.redmine.org/issues/4259), [#4259](http://www.redmine.org/issues/4314))。それらのバグはPostgreSQL 8.4.2で修正済みです。
+- PostgreSQL 8.3以降
+    - データベースの日付形式はISO(PostgreSQLのデフォルト)に設定してください。次のSQL文で設定できます: `ALTER DATABASE "redmine_db" SET datestyle="ISO,MDY";`
+    - PostgreSQL 8.4.0 と 8.4.1のバグによるRedmineの影響が報告されています([#4259](http://www.redmine.org/issues/4259), [#4259](http://www.redmine.org/issues/4314))。それらのバグはPostgreSQL 8.4.2で修正済みです。
 - Microsoft SQL Server 2012以降
 - SQLite 3 (複数のユーザーがアクセスする実運用環境には向いていません!)
 
@@ -52,8 +52,6 @@ Redmineの各バージョンで必要となるRubyのバージョンは以下の
 - バージョン管理システム(svn等)のバイナリ（リポジトリ閲覧用、PATHが通っていなければなりません）。利用可能なバージョン管理システムや動作条件については
     [「リポジトリの設定」](RedmineRepositories) をご覧下さい。
 - [ImageMagick](http://www.imagemagick.org/script/index.php) (ガントチャートのPNG形式でのエクスポートとサムネイル生成に使用)
-- [Ruby OpenID Library](https://github.com/openid/ruby-openid)
-    (OpenIDによる認証を使用する場合)。
 
 Redmineのバージョン
 -------------------
