@@ -6,6 +6,8 @@
 
 [TOC]
 
+<a href="https://hosting.redmine.jp/lp-data-migration/"><img src="/redmine_jp/banner_data_migration-old-version.png" srcset="/redmine_jp/banner_data_migration-old-version.png 2x"></a>
+
 Step 1 - 動作環境の確認
 -----------------------
 
@@ -148,3 +150,5 @@ Redmineのアップグレードについて参考になる情報です。
 -   [Running Redmine on Apache](http://www.redmine.org/wiki/redmine/HowTo_configure_Apache_to_run_Redmine)
 -   [Notes about our 0.8.6 to 0.9.3 upgrade issues and how to resolve them](http://web.archive.org/web/20111214022108/http://www.cybersprocket.com/2010/project-management/upgrading-redmine-from-8-6-to-9-3/) --cybersprocket (2010-04-25)
 -   [Notes about our 0.9.6 to 1.0(RC) upgrade process](http://web.archive.org/web/20120610010521/http://www.cybersprocket.com/2010/tips-tricks/upgrading-redmine-from-0-9-6-to-1-0-0/) --cybersprocket (2010-08-14)
+
+<a href="https://hosting.redmine.jp/lp-data-migration/"><img src="/redmine_jp/banner_data_migration-old-version.png" srcset="/redmine_jp/banner_data_migration-old-version.png 2x"></a>
