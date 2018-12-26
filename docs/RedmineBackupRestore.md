@@ -34,7 +34,7 @@ Redmineのバックアップとリストア
 /usr/bin/pg_dump -U <username> -h <hostname> -Fc --file=redmine.sqlc <redmine_database>
 ```
 
-`ユーザー名`、`パスワード`、`ホスト名`、`データベース名` は `config/database.yml` を見て調べることができます。MySQLのインストールの形態によっては `ホスト名` は不要なことがあります。データベースのパスワードは `pg_dump` コマンドを実行したときに入力を求められます。
+`ユーザー名`、`パスワード`、`ホスト名`、`データベース名` は `config/database.yml` を見て調べることができます。PostgreSQLのインストールの形態によっては `ホスト名` は不要なことがあります。データベースのパスワードは `pg_dump` コマンドを実行したときに入力を求められます。
 
 #### SQLite
 
