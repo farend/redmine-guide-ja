@@ -26,7 +26,7 @@ bundle exec rake redmine:send_reminders days=7 RAILS_ENV="production"
 bundle exec rake redmine:send_reminders days=7 users="1,23,56" RAILS_ENV="production"
 ```
 
-これらの設定をcrontaに追加するときは、以下のようにrakeタスクを記述したシェルスクリプトを作成してください:
+これらの設定をcrontabに追加するときは、以下のようにrakeタスクを記述したシェルスクリプトを作成してください:
 
 ``` sh
 #!/bin/bash

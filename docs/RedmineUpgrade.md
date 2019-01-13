@@ -2,7 +2,7 @@
 ==============
 
 !!! note ""
-    最終更新: 2018/01/14 [[原文](http://www.redmine.org/projects/redmine/wiki/RedmineUpgrade/81)]
+    最終更新: 2018/10/20 [[原文](http://www.redmine.org/projects/redmine/wiki/RedmineUpgrade/82)]
 
 [TOC]
 
@@ -112,10 +112,10 @@ bundle exec rake redmine:plugins:migrate RAILS_ENV=production
 Step 5 - クリーンナップ
 -----------------------
 
-1\. キャッシュとセッションファイルのクリアを行ってください。
+1\. キャッシュのクリアを行ってください。
 
 ``` bash
-bundle exec rake tmp:cache:clear tmp:sessions:clear RAILS_ENV=production
+bundle exec rake tmp:cache:clear RAILS_ENV=production
 ```
 
 2\. アプリケーションサーバを再起動してください (例 puma, thin, passenger)

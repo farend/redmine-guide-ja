@@ -2,7 +2,7 @@ Redmineのインストール
 =====================
 
 !!! note ""
-    最終更新: 2018/01/20 [[原文](http://www.redmine.org/projects/redmine/wiki/RedmineInstall/290)]
+    最終更新: 2018/12/27 [[原文](http://www.redmine.org/projects/redmine/wiki/RedmineInstall/304)]
 
 !!! tip
     インストール作業やサーバの運用が不要な<strong>クラウドサービス</strong>もあります。
@@ -23,11 +23,7 @@ Redmineのインストール
 ### OS
 
 RedmineはUnix, Linux,
-[macOS](http://www.redmine.org/projects/redmine/wiki/RedmineInstallOSX)
-、 [macOS
-Server](http://www.redmine.org/projects/redmine/wiki/RedmineInstallOSXServer)
-、
-[Windows](http://www.redmine.org/projects/redmine/wiki/RedmineInstall#Notes-on-Windows-installation)
+[macOS](http://www.redmine.org/projects/redmine/wiki/RedmineInstallOSX)、[Windows](http://www.redmine.org/projects/redmine/wiki/RedmineInstall#Notes-on-Windows-installation)
 など、Rubyが実行できるほとんどの環境で実行できます。さまざまなシステム向けの個別のインストール手順は
 [こちらの一覧](http://www.redmine.org/projects/redmine/wiki/HowTos)
 を参照してください。
@@ -38,24 +34,24 @@ Redmineの各バージョンで必要となるRubyのバージョンは以下の
 
 |Redmineのバージョン | 対応しているRubyのバージョン     | Railsのバージョン  |
 |:---------------:|:---------------------------------|:-------------------:|
-| 4.0 (未リリース)| ruby 2.2(2.2.2以降), 2.3, 2.4[^ruby-2_4] | Rails 5.1      |
-| 3.4             | ruby 1.9.3, 2.0.0, 2.1, 2.2, 2.3, 2.4[^ruby-2_4] | Rails 4.2           |
+| 4.0             | ruby 2.2(2.2.2以降), 2.3, 2.4, 2.5 | Rails 5.2      |
+| 3.4             | ruby 1.9.3, 2.0.0, 2.1, 2.2, 2.3, 2.4 | Rails 4.2           |
 | 3.3             | ruby 1.9.3, 2.0.0, 2.1, 2.2, 2.3 | Rails 4.2           |
 | 3.2             | ruby 1.9.3, 2.0.0, 2.1, 2.2      | Rails 4.2           |
 
 !!! warning
-    Ruby 1.9.3, 2.0 と 2.1のRubyコミュニティによる保守は終了しました。原則として使用しないでください。
-
-[^ruby-2_4]: Ruby 2.4には [r16355](http://www.redmine.org/projects/redmine/repository/revisions/16355) で対応しています。
+    Ruby 2.1以前のRubyコミュニティによる保守は終了しました。原則として使用しないでください。
 
 ### データベース
 
-- MySQL 5.0 - 5.5
+- MySQL 5.5 - 5.7
     - MySQL 5.6以降とMariaDBは既知の問題があります ([#19344](http://www.redmine.org/issues/19344), [#19395](http://www.redmine.org/issues/19395), [#17460](http://www.redmine.org/issues/17460)).
-- PostgreSQL 8.3以降
+    - Redmine 3.x は MySQL 5.0 と 5.1 にも対応しています
+- PostgreSQL 9.2以降
     - データベースの日付形式はISO(PostgreSQLのデフォルト)に設定してください。次のSQL文で設定できます: `ALTER DATABASE "redmine_db" SET datestyle="ISO,MDY";`
-    - PostgreSQL 8.4.0 と 8.4.1のバグによるRedmineの影響が報告されています([#4259](http://www.redmine.org/issues/4259), [#4259](http://www.redmine.org/issues/4314))。それらのバグはPostgreSQL 8.4.2で修正済みです。
+    - Redmine 3.x は PostgreSQL 8.1 から 9.1 にも対応しています
 - Microsoft SQL Server 2012以降
+    - Redmine 4.0 は2018年12月時点ではSQL Serverに対応していません。依存しているライブラリ [activerecord-sqlserver-adapter](https://github.com/rails-sqlserver/activerecord-sqlserver-adapter) がRails 5.2 に未対応であるためです
 - SQLite 3 (複数のユーザーがアクセスする実運用環境には向いていません!)
 
 ### オプション
@@ -112,6 +108,10 @@ CREATE ROLE redmine LOGIN ENCRYPTED PASSWORD 'my_password' NOINHERIT VALID UNTIL
 CREATE DATABASE redmine WITH ENCODING='UTF8' OWNER=redmine;
 ```
 
+#### SQLiteの場合
+
+ここでのデータベースの作成は不要です。Step 6の実行中に作成されます。
+
 #### SQL Serverの場合
 
 「SQL Server Management Studio」を使えば数クリックで必要な設定が行えます。
@@ -156,7 +156,7 @@ production:
   database: redmine
   host: localhost
   username: redmine
-  password: my_password
+  password: "my_password"
 ```
 
 MySQLを標準のポート(3306)以外で実行している場合は以下のような設定となります:
@@ -168,7 +168,7 @@ production:
   host: localhost
   port: 3307
   username: redmine
-  password: my_password
+  password: "my_password"
 ```
 
 PostgreSQLを使用する場合の例(デフォルトのポート):
@@ -179,9 +179,17 @@ production:
   database: <your_database_name>
   host: <postgres_host>
   username: <postgres_user>
-  password: <postgres_user_password>
+  password: "<postgres_user_password>"
   encoding: utf8
   schema_search_path: <database_schema> (default - public)
+```
+
+SQLiteを使用する場合の例:
+
+``` yaml
+production:
+  adapter: sqlite3
+  database: db/redmine.sqlite3 
 ```
 
 SQL Serverを使用する場合の例(デフォルトホスト＝localhost、デフォルトポート＝1433):
@@ -191,7 +199,7 @@ production:
   adapter: sqlserver
   database: redmine
   username: redmine # should match the database user name
-  password: redminepassword # should match the login password
+  password: "redminepassword" # should match the login password
 ```
 
 ### Step 4 - 依存するソフトウェアのインストール
@@ -269,7 +277,7 @@ set RAILS_ENV=production
 bundle exec rake db:migrate
 ```
 
-これによりマイグレーションが一つずつ実行されてテーブルが作成され、さらに権限のデータ一式と感立社アカウント（`admin`）が作成されます。
+これによりマイグレーションが一つずつ実行されてテーブルが作成され、さらに権限のデータ一式と管理者アカウント（`admin`）が作成されます。
 
 ### Step 7 - デフォルトデータ
 
