@@ -91,10 +91,6 @@ development:
 
 GMail/Google App やそのほかのTLSを要求するSMTPサーバを使用する場合は、TLS関係の設定を記述する必要があります:
 
-If you want to use GMail/Google Apps and other TLS-requiring SMTP servers, you'll have to add some TLS-related settings:
-
-、TLS関係の設定を追加する必要があります:
-
 ```
 production:
   email_delivery:
