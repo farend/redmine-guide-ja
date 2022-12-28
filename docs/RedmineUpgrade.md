@@ -78,7 +78,7 @@ bundle exec rake generate_secret_token
 !!! warning "重要"
     絶対に config/settings.yml を古いもので上書きしないでください。
 
-### SVNチェックアウトのアップグレード
+### Option 2 - SVNチェックアウトのアップグレード
 
 1\. Redmineのインストールディレクトリに移動して、以下のコマンドを実行してください:
 
